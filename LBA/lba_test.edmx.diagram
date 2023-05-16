@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e27106f36834a0086b22d0994d91e1f" Name="Diagram1">
+        <EntityTypeShape EntityType="lba_testModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="lba_testModel.T_Limit" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="lba_testModel.T_Nationality" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="lba_testModel.T_Operation" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="lba_testModel.T_OperationType" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="lba_testModel.T_Person" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="lba_testModel.FK_T_Person_T_Nationality" ManuallyRouted="false" />
+        <AssociationConnector Association="lba_testModel.FK_T_Operation_T_OperationType" ManuallyRouted="false" />
+        <AssociationConnector Association="lba_testModel.FK_T_Operation_T_Person" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -62,5 +62,19 @@ namespace LBA
         {
             searchClient();
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AddOperation display6 = new AddOperation();
+            display6.Show();
+            this.Hide();
+        }
+
+        private void btnAddOperation_Click(object sender, EventArgs e)
+        {
+            AddOperation display6 = new AddOperation();
+            display6.Show();
+            this.Hide();
+        }
     }
 }

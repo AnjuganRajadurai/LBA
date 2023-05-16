@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOperation.Designer.cs">
+      <DependentUpon>AddOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="lba_test.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +125,9 @@
     <Compile Include="T_Person.cs">
       <DependentUpon>lba_test.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddOperation.resx">
+      <DependentUpon>AddOperation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

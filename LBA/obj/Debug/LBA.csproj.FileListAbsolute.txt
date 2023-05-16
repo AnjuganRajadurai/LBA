@@ -32,3 +32,4 @@ C:\Users\arajadurai\source\repos\LBA\bin\Debug\EntityFramework.xml
 C:\Users\arajadurai\source\repos\LBA\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\arajadurai\source\repos\LBA\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.csproj.CopyComplete
+C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.AddOperation.resources

@@ -11,7 +11,7 @@ using System.Data.Entity.Infrastructure.MappingViews;
 
 [assembly: DbMappingViewCacheTypeAttribute(
     typeof(LBA.lba_testEntities1),
-    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsd6b41990ae343ea63d4b21a31537b6c29108efbf2edf1ea54edbc93ca71c43fb))]
+    typeof(Edm_EntityMappingGeneratedViews.ViewsForBaseEntitySetsca337980f7c95cc7cb943682db27229ed6f96d32ca3ac48c4b87d709ee124358))]
 
 namespace Edm_EntityMappingGeneratedViews
 {
@@ -23,14 +23,14 @@ namespace Edm_EntityMappingGeneratedViews
     /// Implements a mapping view cache.
     /// </summary>
     [GeneratedCode("Entity Framework 6 Power Tools", "0.9.5.0")]
-    internal sealed class ViewsForBaseEntitySetsd6b41990ae343ea63d4b21a31537b6c29108efbf2edf1ea54edbc93ca71c43fb : DbMappingViewCache
+    internal sealed class ViewsForBaseEntitySetsca337980f7c95cc7cb943682db27229ed6f96d32ca3ac48c4b87d709ee124358 : DbMappingViewCache
     {
         /// <summary>
         /// Gets a hash value computed over the mapping closure.
         /// </summary>
         public override string MappingHashValue
         {
-            get { return "d6b41990ae343ea63d4b21a31537b6c29108efbf2edf1ea54edbc93ca71c43fb"; }
+            get { return "ca337980f7c95cc7cb943682db27229ed6f96d32ca3ac48c4b87d709ee124358"; }
         }
 
         /// <summary>
@@ -72,39 +72,49 @@ namespace Edm_EntityMappingGeneratedViews
                 return GetView4();
             }
 
-            if (extentName == "lba_testModelStoreContainer.T_Operation")
+            if (extentName == "lba_testModelStoreContainer.T_Person")
             {
                 return GetView5();
             }
 
-            if (extentName == "lba_testModelStoreContainer.T_OperationType")
+            if (extentName == "lba_testModelStoreContainer.T_Operation")
             {
                 return GetView6();
             }
 
-            if (extentName == "lba_testModelStoreContainer.T_Person")
+            if (extentName == "lba_testModelStoreContainer.T_OperationDetail")
             {
                 return GetView7();
             }
 
-            if (extentName == "lba_testEntities1.T_Nationality")
+            if (extentName == "lba_testModelStoreContainer.T_OperationType")
             {
                 return GetView8();
             }
 
-            if (extentName == "lba_testEntities1.T_Operation")
+            if (extentName == "lba_testEntities1.T_Nationality")
             {
                 return GetView9();
             }
 
-            if (extentName == "lba_testEntities1.T_OperationType")
+            if (extentName == "lba_testEntities1.T_Person")
             {
                 return GetView10();
             }
 
-            if (extentName == "lba_testEntities1.T_Person")
+            if (extentName == "lba_testEntities1.T_Operation")
             {
                 return GetView11();
+            }
+
+            if (extentName == "lba_testEntities1.T_OperationDetail")
+            {
+                return GetView12();
+            }
+
+            if (extentName == "lba_testEntities1.T_OperationType")
+            {
+                return GetView13();
             }
 
             return null;
@@ -210,54 +220,10 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for lba_testModelStoreContainer.T_Operation.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView5()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing T_Operation
-        [lba_testModel.Store.T_Operation](T1.[T_Operation.operationId], T1.[T_Operation.personFk], T1.[T_Operation.operationTypeFk], T1.[T_Operation.operatorName], T1.[T_Operation.cashdesk], T1.[T_Operation.cession], T1.[T_Operation.retrocession], T1.[T_Operation.operationDate], T1.[T_Operation.operationAmount], T1.[T_Operation.operationComment])
-    FROM (
-        SELECT 
-            T.operationId AS [T_Operation.operationId], 
-            T.personFk AS [T_Operation.personFk], 
-            T.operationTypeFk AS [T_Operation.operationTypeFk], 
-            T.operatorName AS [T_Operation.operatorName], 
-            T.cashdesk AS [T_Operation.cashdesk], 
-            T.cession AS [T_Operation.cession], 
-            T.retrocession AS [T_Operation.retrocession], 
-            T.operationDate AS [T_Operation.operationDate], 
-            T.operationAmount AS [T_Operation.operationAmount], 
-            T.operationComment AS [T_Operation.operationComment], 
-            True AS _from0
-        FROM lba_testEntities1.T_Operation AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for lba_testModelStoreContainer.T_OperationType.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView6()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing T_OperationType
-        [lba_testModel.Store.T_OperationType](T1.[T_OperationType.operationTypeId], T1.[T_OperationType.operationTypeName])
-    FROM (
-        SELECT 
-            T.operationTypeId AS [T_OperationType.operationTypeId], 
-            T.operationTypeName AS [T_OperationType.operationTypeName], 
-            True AS _from0
-        FROM lba_testEntities1.T_OperationType AS T
-    ) AS T1");
-        }
-
-        /// <summary>
         /// Gets the view for lba_testModelStoreContainer.T_Person.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView7()
+        private static DbMappingView GetView5()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing T_Person
@@ -284,10 +250,71 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for lba_testEntities1.T_Nationality.
+        /// Gets the view for lba_testModelStoreContainer.T_Operation.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView6()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing T_Operation
+        [lba_testModel.Store.T_Operation](T1.[T_Operation.operationId], T1.[T_Operation.personFk], T1.[T_Operation.operationTypeFk], T1.[T_Operation.operatorName], T1.[T_Operation.cashdesk], T1.[T_Operation.operationDate], T1.[T_Operation.operationAmount], T1.[T_Operation.operationComment])
+    FROM (
+        SELECT 
+            T.operationId AS [T_Operation.operationId], 
+            T.personFk AS [T_Operation.personFk], 
+            T.operationTypeFk AS [T_Operation.operationTypeFk], 
+            T.operatorName AS [T_Operation.operatorName], 
+            T.cashdesk AS [T_Operation.cashdesk], 
+            T.operationDate AS [T_Operation.operationDate], 
+            T.operationAmount AS [T_Operation.operationAmount], 
+            T.operationComment AS [T_Operation.operationComment], 
+            True AS _from0
+        FROM lba_testEntities1.T_Operation AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for lba_testModelStoreContainer.T_OperationDetail.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView7()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing T_OperationDetail
+        [lba_testModel.Store.T_OperationDetail](T1.[T_OperationDetail.operationDetailId], T1.[T_OperationDetail.operationDetailName])
+    FROM (
+        SELECT 
+            T.operationDetailId AS [T_OperationDetail.operationDetailId], 
+            T.operationDetailName AS [T_OperationDetail.operationDetailName], 
+            True AS _from0
+        FROM lba_testEntities1.T_OperationDetail AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for lba_testModelStoreContainer.T_OperationType.
         /// </summary>
         /// <returns>The mapping view.</returns>
         private static DbMappingView GetView8()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing T_OperationType
+        [lba_testModel.Store.T_OperationType](T1.[T_OperationType.operationTypeId], T1.[T_OperationType.operationTypeName], T1.[T_OperationType.operationDetailFk])
+    FROM (
+        SELECT 
+            T.operationTypeId AS [T_OperationType.operationTypeId], 
+            T.operationTypeName AS [T_OperationType.operationTypeName], 
+            T.operationDetailFk AS [T_OperationType.operationDetailFk], 
+            True AS _from0
+        FROM lba_testEntities1.T_OperationType AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for lba_testEntities1.T_Nationality.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView9()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing T_Nationality
@@ -303,54 +330,10 @@ namespace Edm_EntityMappingGeneratedViews
         }
 
         /// <summary>
-        /// Gets the view for lba_testEntities1.T_Operation.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView9()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing T_Operation
-        [lba_testModel.T_Operation](T1.[T_Operation.operationId], T1.[T_Operation.personFk], T1.[T_Operation.operationTypeFk], T1.[T_Operation.cashdesk], T1.[T_Operation.cession], T1.[T_Operation.retrocession], T1.[T_Operation.operationDate], T1.[T_Operation.operationAmount], T1.[T_Operation.operationComment], T1.[T_Operation.operatorName])
-    FROM (
-        SELECT 
-            T.operationId AS [T_Operation.operationId], 
-            T.personFk AS [T_Operation.personFk], 
-            T.operationTypeFk AS [T_Operation.operationTypeFk], 
-            T.cashdesk AS [T_Operation.cashdesk], 
-            T.cession AS [T_Operation.cession], 
-            T.retrocession AS [T_Operation.retrocession], 
-            T.operationDate AS [T_Operation.operationDate], 
-            T.operationAmount AS [T_Operation.operationAmount], 
-            T.operationComment AS [T_Operation.operationComment], 
-            T.operatorName AS [T_Operation.operatorName], 
-            True AS _from0
-        FROM lba_testModelStoreContainer.T_Operation AS T
-    ) AS T1");
-        }
-
-        /// <summary>
-        /// Gets the view for lba_testEntities1.T_OperationType.
-        /// </summary>
-        /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView10()
-        {
-            return new DbMappingView(@"
-    SELECT VALUE -- Constructing T_OperationType
-        [lba_testModel.T_OperationType](T1.[T_OperationType.operationTypeId], T1.[T_OperationType.operationTypeName])
-    FROM (
-        SELECT 
-            T.operationTypeId AS [T_OperationType.operationTypeId], 
-            T.operationTypeName AS [T_OperationType.operationTypeName], 
-            True AS _from0
-        FROM lba_testModelStoreContainer.T_OperationType AS T
-    ) AS T1");
-        }
-
-        /// <summary>
         /// Gets the view for lba_testEntities1.T_Person.
         /// </summary>
         /// <returns>The mapping view.</returns>
-        private static DbMappingView GetView11()
+        private static DbMappingView GetView10()
         {
             return new DbMappingView(@"
     SELECT VALUE -- Constructing T_Person
@@ -373,6 +356,67 @@ namespace Edm_EntityMappingGeneratedViews
             T.docNumber AS [T_Person.docNumber], 
             True AS _from0
         FROM lba_testModelStoreContainer.T_Person AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for lba_testEntities1.T_Operation.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView11()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing T_Operation
+        [lba_testModel.T_Operation](T1.[T_Operation.operationId], T1.[T_Operation.personFk], T1.[T_Operation.operationTypeFk], T1.[T_Operation.operatorName], T1.[T_Operation.cashdesk], T1.[T_Operation.operationDate], T1.[T_Operation.operationAmount], T1.[T_Operation.operationComment])
+    FROM (
+        SELECT 
+            T.operationId AS [T_Operation.operationId], 
+            T.personFk AS [T_Operation.personFk], 
+            T.operationTypeFk AS [T_Operation.operationTypeFk], 
+            T.operatorName AS [T_Operation.operatorName], 
+            T.cashdesk AS [T_Operation.cashdesk], 
+            T.operationDate AS [T_Operation.operationDate], 
+            T.operationAmount AS [T_Operation.operationAmount], 
+            T.operationComment AS [T_Operation.operationComment], 
+            True AS _from0
+        FROM lba_testModelStoreContainer.T_Operation AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for lba_testEntities1.T_OperationDetail.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView12()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing T_OperationDetail
+        [lba_testModel.T_OperationDetail](T1.[T_OperationDetail.operationDetailId], T1.[T_OperationDetail.operationDetailName])
+    FROM (
+        SELECT 
+            T.operationDetailId AS [T_OperationDetail.operationDetailId], 
+            T.operationDetailName AS [T_OperationDetail.operationDetailName], 
+            True AS _from0
+        FROM lba_testModelStoreContainer.T_OperationDetail AS T
+    ) AS T1");
+        }
+
+        /// <summary>
+        /// Gets the view for lba_testEntities1.T_OperationType.
+        /// </summary>
+        /// <returns>The mapping view.</returns>
+        private static DbMappingView GetView13()
+        {
+            return new DbMappingView(@"
+    SELECT VALUE -- Constructing T_OperationType
+        [lba_testModel.T_OperationType](T1.[T_OperationType.operationTypeId], T1.[T_OperationType.operationTypeName], T1.[T_OperationType.operationDetailFk])
+    FROM (
+        SELECT 
+            T.operationTypeId AS [T_OperationType.operationTypeId], 
+            T.operationTypeName AS [T_OperationType.operationTypeName], 
+            T.operationDetailFk AS [T_OperationType.operationDetailFk], 
+            True AS _from0
+        FROM lba_testModelStoreContainer.T_OperationType AS T
     ) AS T1");
         }
     }

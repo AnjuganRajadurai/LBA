@@ -116,6 +116,12 @@
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="OperationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationHistory.Designer.cs">
+      <DependentUpon>OperationHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonProfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="T_Operation.cs">
       <DependentUpon>lba_test.tt</DependentUpon>
     </Compile>
+    <Compile Include="T_OperationDetail.cs">
+      <DependentUpon>lba_test.tt</DependentUpon>
+    </Compile>
     <Compile Include="T_OperationType.cs">
       <DependentUpon>lba_test.tt</DependentUpon>
     </Compile>
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationHistory.resx">
+      <DependentUpon>OperationHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PersonProfil.resx">
       <DependentUpon>PersonProfil.cs</DependentUpon>

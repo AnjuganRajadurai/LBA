@@ -389,6 +389,7 @@ namespace LBA
             this.btnDeletePerson.TabIndex = 29;
             this.btnDeletePerson.Text = "Supprimer le client";
             this.btnDeletePerson.UseVisualStyleBackColor = false;
+            this.btnDeletePerson.Click += new System.EventHandler(this.btnDeletePerson_Click);
             // 
             // PersonProfil
             // 

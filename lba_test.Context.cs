@@ -28,8 +28,9 @@ namespace LBA
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<T_Limit> T_Limit { get; set; }
         public virtual DbSet<T_Nationality> T_Nationality { get; set; }
-        public virtual DbSet<T_Operation> T_Operation { get; set; }
-        public virtual DbSet<T_OperationType> T_OperationType { get; set; }
         public virtual DbSet<T_Person> T_Person { get; set; }
+        public virtual DbSet<T_Operation> T_Operation { get; set; }
+        public virtual DbSet<T_OperationDetail> T_OperationDetail { get; set; }
+        public virtual DbSet<T_OperationType> T_OperationType { get; set; }
     }
 }

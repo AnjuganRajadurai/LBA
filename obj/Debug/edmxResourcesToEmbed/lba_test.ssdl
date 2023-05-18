@@ -35,11 +35,16 @@
     <Property Name="operationTypeFk" Type="int" Nullable="false" />
     <Property Name="operatorName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="cashdesk" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="cession" Type="bit" />
-    <Property Name="retrocession" Type="bit" />
     <Property Name="operationDate" Type="datetime" Nullable="false" />
     <Property Name="operationAmount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="operationComment" Type="varchar" MaxLength="50" />
+    <Property Name="operationComment" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_OperationDetail">
+    <Key>
+      <PropertyRef Name="operationDetailId" />
+    </Key>
+    <Property Name="operationDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="operationDetailName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="T_OperationType">
     <Key>
@@ -47,6 +52,7 @@
     </Key>
     <Property Name="operationTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="operationTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="operationDetailFk" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="T_Person">
     <Key>
@@ -91,6 +97,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_T_OperationType_T_OperationDetail">
+    <End Role="T_OperationDetail" Type="Self.T_OperationDetail" Multiplicity="1" />
+    <End Role="T_OperationType" Type="Self.T_OperationType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_OperationDetail">
+        <PropertyRef Name="operationDetailId" />
+      </Principal>
+      <Dependent Role="T_OperationType">
+        <PropertyRef Name="operationDetailFk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_T_Person_T_Nationality">
     <End Role="T_Nationality" Type="Self.T_Nationality" Multiplicity="1" />
     <End Role="T_Person" Type="Self.T_Person" Multiplicity="*" />
@@ -108,6 +126,7 @@
     <EntitySet Name="T_Limit" EntityType="Self.T_Limit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_Nationality" EntityType="Self.T_Nationality" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_Operation" EntityType="Self.T_Operation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_OperationDetail" EntityType="Self.T_OperationDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_OperationType" EntityType="Self.T_OperationType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_Person" EntityType="Self.T_Person" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_T_Operation_T_OperationType" Association="Self.FK_T_Operation_T_OperationType">
@@ -117,6 +136,10 @@
     <AssociationSet Name="FK_T_Operation_T_Person" Association="Self.FK_T_Operation_T_Person">
       <End Role="T_Person" EntitySet="T_Person" />
       <End Role="T_Operation" EntitySet="T_Operation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_OperationType_T_OperationDetail" Association="Self.FK_T_OperationType_T_OperationDetail">
+      <End Role="T_OperationDetail" EntitySet="T_OperationDetail" />
+      <End Role="T_OperationType" EntitySet="T_OperationType" />
     </AssociationSet>
     <AssociationSet Name="FK_T_Person_T_Nationality" Association="Self.FK_T_Person_T_Nationality">
       <End Role="T_Nationality" EntitySet="T_Nationality" />

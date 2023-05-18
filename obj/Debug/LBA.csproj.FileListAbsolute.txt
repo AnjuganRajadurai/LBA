@@ -35,3 +35,4 @@ C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.csproj.CopyComplete
 C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.AddOperation.resources
 C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.AddPerson.resources
 C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.PersonProfil.resources
+C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.OperationHistory.resources

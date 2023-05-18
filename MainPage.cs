@@ -116,7 +116,9 @@ namespace LBA
             }
             else if(e.ColumnIndex == 15)
             {
-
+                OperationHistory display8 = new OperationHistory();
+                display8.personIdToViewOperation = int.Parse(dataGridView1.CurrentRow.Cells[13].Value.ToString());
+                display8.Show();
 
             }
             else if (e.ColumnIndex == 16)
@@ -131,6 +133,10 @@ namespace LBA
         {
             AddOperation display6 = new AddOperation();
             display6.Show();
+            AddPerson display4 = new AddPerson();
+            display4.mainPage = this;
+            display4.Show();
+            display6.addPerson = display4;
         }
 
         private void btnAddPerson_Click(object sender, EventArgs e)

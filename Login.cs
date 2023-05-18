@@ -156,28 +156,24 @@ namespace LBA
             {
                 if (userGroup == "G-MONC1-APP-LBA-RW")
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                     MainPage display2 = new MainPage();
                     display2.Show();
                     this.Close();
                 }
                 else if (userGroup == "G-MONC1-APP-LBA-RW")
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                     MainPage display2 = new MainPage();
                     display2.Show();
                     this.Close();
                 }
                 else if (userGroup == "G-MONC1-APP-LBA-W")
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                     MainPage display2 = new MainPage();
                     display2.Show();
                     this.Close();
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                     MainPage display2 = new MainPage();
                     display2.Show();
                     this.Hide();
@@ -205,28 +201,24 @@ namespace LBA
                 {
                     if (userGroup == "G-MONC1-APP-LBA-RW")
                     {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                         MainPage display2 = new MainPage();
                         display2.Show();
                         this.Hide();
                     }
                     else if (userGroup == "G-MONC1-APP-LBA-RW")
                     {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                         MainPage display2 = new MainPage();
                         display2.Show();
                         this.Hide();
                     }
                     else if (userGroup == "G-MONC1-APP-LBA-W")
                     {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                         MainPage display2 = new MainPage();
                         display2.Show();
                         this.Hide();
                     }
                     else
                     {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
                         MainPage display2 = new MainPage();
                         display2.Show();
                         this.Hide();

@@ -66,5 +66,26 @@ namespace LBA
             System.Windows.Forms.MessageBox.Show("Client modifié avec succès");
             this.Close();
         }
+
+        private void btnDeletePerson_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lba_testEntities1 db = new lba_testEntities1();
+
+                var personToDelete = db.T_Person.Where(p => p.personId == personIdToModify).FirstOrDefault();
+                db.T_Person.Remove(personToDelete);
+                db.SaveChanges();
+                mainPage.searchClient();
+                this.Close();
+
+
+                System.Windows.Forms.MessageBox.Show("Client supprimé avec succès !");
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de la suppression du client !");
+            }
+        }
     }
 }

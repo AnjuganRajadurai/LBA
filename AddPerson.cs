@@ -13,16 +13,31 @@ namespace LBA
     public partial class AddPerson : Form
     {
         public MainPage mainPage;
+        public int lastIdAdded;
+        public bool operationNewPerson = false;
+        public bool operationCanceled = true;
 
         public AddPerson()
         {
             InitializeComponent();
         }
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if (operationCanceled)
+            {
+                if (Application.OpenForms.OfType<AddOperation>().Count() == 1)
+                {
+                    Application.OpenForms.OfType<AddOperation>().First().Close();
+                }
+            }
+
+        }
         private void addPerson()
         {
             lba_testEntities1 db = new lba_testEntities1();
 
-            db.T_Person.Add(new T_Person()
+            var lastPersonAdded = db.T_Person.Add(new T_Person()
             {
                 lastName = txtAddPersonLastName.Text,
                 firstName = txtAddPersonFirstName.Text,
@@ -39,8 +54,14 @@ namespace LBA
                 commentPerson = rtbAddPersonComment.Text
             });
             db.SaveChanges();
+            lastIdAdded = lastPersonAdded.personId;
+            if (Application.OpenForms.OfType<AddOperation>().Count() == 1)
+            {
+                operationNewPerson = true;
+            }
             mainPage.searchClient();
             System.Windows.Forms.MessageBox.Show("Client ajouté avec succès !");
+            operationCanceled = false;
             this.Close();
         }
 

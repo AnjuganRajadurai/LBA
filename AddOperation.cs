@@ -11,43 +11,101 @@ using System.Windows.Forms;
 namespace LBA
 {
     public partial class AddOperation : Form
+
     {
+        public AddPerson addPerson;
+        public OperationHistory operationHistory;
+
         public AddOperation()
         {
             InitializeComponent();
         }
-
         private void addOperation()
         {
-            try
+            if (addPerson.operationNewPerson)
             {
-                lba_testEntities1 db = new lba_testEntities1();
-
-                decimal operationAmountLimit = db.T_Limit.Select(l=>l.limitAmount).FirstOrDefault();
-                if (operationAmountLimit < decimal.Parse(txtOperationAmount.Text))
+                try
                 {
-                    System.Windows.Forms.MessageBox.Show("Le montant dépasse la limite fixée !");
+                    addPerson.lastIdAdded = personToAddOperation;
+                    lba_testEntities1 db = new lba_testEntities1();
+
+                    decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
+                    if (operationAmountLimit < decimal.Parse(txtOperationAmount.Text))
+                    {
+                        System.Windows.Forms.MessageBox.Show("Le montant dépasse la limite fixée !");
+                    }
+                    bool countryIsRisked = db.T_Nationality.Join(db.T_Person, n => n.nationalityId, p => p.nationalityFk, (n, p) => new
+                    {
+                        p.personId,
+                        n.countryRisk
+
+                    }).Where(p => p.personId == personToAddOperation).Select(n => n.countryRisk).FirstOrDefault();
+
+                    if (countryIsRisked)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Sa nationalité est un pays à risque !");
+                    }
+
+                    db.T_Operation.Add(new T_Operation()
+                    {
+                        personFk = personToAddOperation,
+                        operationTypeFk = cmbAddOperationType.SelectedIndex + 1,
+                        operatorName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1],
+                        cashdesk = System.Environment.MachineName,
+                        operationDate = DateTime.Now,
+                        operationAmount = decimal.Parse(txtOperationAmount.Text),
+                        operationComment = cmbAddOperationComment.Text
+                    });
+                    db.SaveChanges();
+                    System.Windows.Forms.MessageBox.Show("Transaction ajoutée avec succès !");
                 }
-
-                db.T_Operation.Add(new T_Operation()
+                catch (Exception ex)
                 {
-                    personFk = personToAddOperation,
-                    operationTypeFk = cmbAddOperationType.SelectedIndex + 1,
-                    operatorName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1],
-                    cashdesk = System.Environment.MachineName,
-                    cession = true,
-                    retrocession = false,
-                    operationDate = DateTime.Now,
-                    operationAmount = decimal.Parse(txtOperationAmount.Text),
-                    operationComment = cmbAddOperationComment.Text
-                });
-                db.SaveChanges();
-                System.Windows.Forms.MessageBox.Show("Transaction ajoutée avec succès !");
+                    System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de l'ajout de la nouvelle transaction !");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de l'ajout de la nouvelle transaction !");
+                try
+                {
+                    lba_testEntities1 db = new lba_testEntities1();
+
+                    decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
+                    if (operationAmountLimit < decimal.Parse(txtOperationAmount.Text))
+                    {
+                        System.Windows.Forms.MessageBox.Show("Le montant dépasse la limite fixée !");
+                    }
+                    bool countryIsRisked = db.T_Nationality.Join(db.T_Person, n => n.nationalityId, p => p.nationalityFk, (n, p) => new
+                    {
+                        p.personId,
+                        n.countryRisk
+
+                    }).Where(p => p.personId == personToAddOperation).Select(n => n.countryRisk).FirstOrDefault();
+
+                    if (countryIsRisked)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Sa nationalité est un pays à risque !");
+                    }
+
+                    db.T_Operation.Add(new T_Operation()
+                    {
+                        personFk = personToAddOperation,
+                        operationTypeFk = cmbAddOperationType.SelectedIndex + 1,
+                        operatorName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1],
+                        cashdesk = System.Environment.MachineName,
+                        operationDate = DateTime.Now,
+                        operationAmount = decimal.Parse(txtOperationAmount.Text),
+                        operationComment = cmbAddOperationComment.Text
+                    });
+                    db.SaveChanges();
+                    System.Windows.Forms.MessageBox.Show("Transaction ajoutée avec succès !");
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de l'ajout de la nouvelle transaction !");
+                }
             }
+            
         }
         private void btnAddOperationEmpty_Click(object sender, EventArgs e)
         {
@@ -59,6 +117,10 @@ namespace LBA
         private void btnAddOperation_Click(object sender, EventArgs e)
         {
             addOperation();
+            if (!addPerson.operationNewPerson)
+            {
+                operationHistory.viewOperation();
+            }
             this.Close();
         }
 

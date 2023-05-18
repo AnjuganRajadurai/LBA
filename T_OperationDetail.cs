@@ -12,20 +12,18 @@ namespace LBA
     using System;
     using System.Collections.Generic;
     
-    public partial class T_OperationType
+    public partial class T_OperationDetail
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public T_OperationType()
+        public T_OperationDetail()
         {
-            this.T_Operation = new HashSet<T_Operation>();
+            this.T_OperationType = new HashSet<T_OperationType>();
         }
     
-        public int operationTypeId { get; set; }
-        public string operationTypeName { get; set; }
-        public int operationDetailFk { get; set; }
+        public int operationDetailId { get; set; }
+        public string operationDetailName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<T_Operation> T_Operation { get; set; }
-        public virtual T_OperationDetail T_OperationDetail { get; set; }
+        public virtual ICollection<T_OperationType> T_OperationType { get; set; }
     }
 }

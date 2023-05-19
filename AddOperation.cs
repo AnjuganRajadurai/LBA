@@ -22,11 +22,10 @@ namespace LBA
         }
         private void addOperation()
         {
-            if (addPerson.operationNewPerson)
+            if (normalOperation)
             {
                 try
                 {
-                    addPerson.lastIdAdded = personToAddOperation;
                     lba_testEntities1 db = new lba_testEntities1();
 
                     decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
@@ -68,6 +67,7 @@ namespace LBA
             {
                 try
                 {
+                    personToAddOperation = addPerson.lastIdAdded;
                     lba_testEntities1 db = new lba_testEntities1();
 
                     decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
@@ -117,7 +117,7 @@ namespace LBA
         private void btnAddOperation_Click(object sender, EventArgs e)
         {
             addOperation();
-            if (!addPerson.operationNewPerson)
+            if (Application.OpenForms.OfType<OperationHistory>().Count() == 1)
             {
                 operationHistory.viewOperation();
             }

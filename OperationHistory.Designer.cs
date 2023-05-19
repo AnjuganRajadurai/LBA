@@ -141,7 +141,7 @@ namespace LBA
         private System.Windows.Forms.Label lblOperationHistoryDate1;
         private System.Windows.Forms.DateTimePicker dtpOperationHistory1;
         private System.Windows.Forms.DateTimePicker dtpOperationHistory2;
-        private System.Windows.Forms.Button btnOperationHistoryAdd;
+        public System.Windows.Forms.Button btnOperationHistoryAdd;
         public int personIdToViewOperation;
     }
 }

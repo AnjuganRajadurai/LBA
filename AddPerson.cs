@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace LBA
 {
@@ -14,7 +15,6 @@ namespace LBA
     {
         public MainPage mainPage;
         public int lastIdAdded;
-        public bool operationNewPerson = false;
         public bool operationCanceled = true;
 
         public AddPerson()
@@ -33,36 +33,48 @@ namespace LBA
             }
 
         }
+        /*private bool regexNamesChecked()
+        {
+            bool isRegexNamesCheked;
+            string patternNames = ".+";
+            Regex namesRG = new Regex(patternNames);
+            if (!(isRegexNamesCheked = namesRG.IsMatch(txtAddPersonFirstName.Text)))
+            {
+                System.Windows.Forms.MessageBox.Show("Merci de rentrer uniquement des lettres !");
+            }
+            return isRegexNamesCheked;
+
+        }*/
         private void addPerson()
         {
-            lba_testEntities1 db = new lba_testEntities1();
+            /*if (regexNamesChecked())
+            {*/
+                lba_testEntities1 db = new lba_testEntities1();
 
-            var lastPersonAdded = db.T_Person.Add(new T_Person()
-            {
-                lastName = txtAddPersonLastName.Text,
-                firstName = txtAddPersonFirstName.Text,
-                otherName = txtAddPersonOtherName.Text,
-                road = txtAddPersonRoad.Text,
-                city = txtAddPersonCity.Text,
-                country = txtAddPersonCountry.Text,
-                nationalityFk = cmbAddPersonNationality.SelectedIndex + 1,
-                birthday = dtpAddPersonBirthday.Value,
-                job = txtAddPersonJob.Text,
-                documentType = cmbAddPersonDocType.Text,
-                idValidity = dtpAddPersonIdValidity.Value,
-                docNumber = txtAddPersonDocNumber.Text,
-                commentPerson = rtbAddPersonComment.Text
-            });
-            db.SaveChanges();
-            lastIdAdded = lastPersonAdded.personId;
-            if (Application.OpenForms.OfType<AddOperation>().Count() == 1)
-            {
-                operationNewPerson = true;
-            }
-            mainPage.searchClient();
-            System.Windows.Forms.MessageBox.Show("Client ajouté avec succès !");
-            operationCanceled = false;
-            this.Close();
+                var lastPersonAdded = db.T_Person.Add(new T_Person()
+                {
+                    lastName = txtAddPersonLastName.Text,
+                    firstName = txtAddPersonFirstName.Text,
+                    otherName = txtAddPersonOtherName.Text,
+                    road = txtAddPersonRoad.Text,
+                    city = txtAddPersonCity.Text,
+                    country = txtAddPersonCountry.Text,
+                    nationalityFk = cmbAddPersonNationality.SelectedIndex + 1,
+                    birthday = dtpAddPersonBirthday.Value,
+                    job = txtAddPersonJob.Text,
+                    documentType = cmbAddPersonDocType.Text,
+                    idValidity = dtpAddPersonIdValidity.Value,
+                    docNumber = txtAddPersonDocNumber.Text,
+                    commentPerson = rtbAddPersonComment.Text
+                });
+                db.SaveChanges();
+                lastIdAdded = lastPersonAdded.personId;
+                mainPage.searchClient();
+                System.Windows.Forms.MessageBox.Show("Client ajouté avec succès !");
+                operationCanceled = false;
+                this.Close();/*
+            }*/
+            
         }
 
         private void btnAddPersonEmpty_Click(object sender, EventArgs e)
@@ -109,6 +121,8 @@ namespace LBA
         {
             // TODO: cette ligne de code charge les données dans la table 'lba_testDataSet.T_Nationality'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.t_NationalityTableAdapter.Fill(this.lba_testDataSet.T_Nationality);
+            dtpAddPersonBirthday.Value = DateTime.Now.AddYears(-18);
+            cmbAddPersonNationality.SelectedIndex = 190;
 
         }
     }

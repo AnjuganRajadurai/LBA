@@ -24,6 +24,40 @@ namespace LBA
             this.t_NationalityTableAdapter.Fill(this.lba_testDataSet.T_Nationality);
 
         }
+        private void deletePerson()
+        {
+            lba_testEntities1 db = new lba_testEntities1();
+
+            int hasOperation = db.T_Operation.Join(db.T_Person, o => o.personFk, p => p.personId, (o, p) => new
+            {
+                o.personFk,
+                o.operationId
+            }).Where(o=>o.personFk == personIdToModify).Select(o=>o.operationId).Count();
+            if (hasOperation >=1)
+            {
+                System.Windows.Forms.MessageBox.Show("Impossible de supprimer ce client car il possède une ou plusieures transactions !");
+            }
+            else
+            {
+                try
+                {
+
+                    var personToDelete = db.T_Person.Where(p => p.personId == personIdToModify).FirstOrDefault();
+                    db.T_Person.Remove(personToDelete);
+                    db.SaveChanges();
+                    mainPage.searchClient();
+                    this.Close();
+
+
+                    System.Windows.Forms.MessageBox.Show("Client supprimé avec succès !");
+                }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de la suppression du client !");
+                }
+            }
+            
+        }
 
         private void btnPersonProfilEmpty_Click(object sender, EventArgs e)
         {
@@ -69,23 +103,7 @@ namespace LBA
 
         private void btnDeletePerson_Click(object sender, EventArgs e)
         {
-            try
-            {
-                lba_testEntities1 db = new lba_testEntities1();
-
-                var personToDelete = db.T_Person.Where(p => p.personId == personIdToModify).FirstOrDefault();
-                db.T_Person.Remove(personToDelete);
-                db.SaveChanges();
-                mainPage.searchClient();
-                this.Close();
-
-
-                System.Windows.Forms.MessageBox.Show("Client supprimé avec succès !");
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de la suppression du client !");
-            }
+            deletePerson();
         }
     }
 }

@@ -416,8 +416,8 @@ namespace LBA
         private lba_testDataSetTableAdapters.T_NationalityTableAdapter t_NationalityTableAdapter;
         private System.Windows.Forms.BindingSource lbatestDataSetBindingSource;
         private lba_testDataSet lba_testDataSet;
-        private System.Windows.Forms.Button btnPersonProfilEmpty;
-        private System.Windows.Forms.Button btnPersonProfilSave;
+        public System.Windows.Forms.Button btnPersonProfilEmpty;
+        public System.Windows.Forms.Button btnPersonProfilSave;
         public System.Windows.Forms.RichTextBox rtbPersonProfilComment;
         public System.Windows.Forms.ComboBox cmbPersonProfilDocType;
         public System.Windows.Forms.TextBox txtPersonProfilDocNumber;
@@ -448,6 +448,6 @@ namespace LBA
         private System.Windows.Forms.Panel personProfilPanel;
         public int personIdToModify;
         private System.Windows.Forms.BindingSource tNationalityBindingSource1;
-        private System.Windows.Forms.Button btnDeletePerson;
+        public System.Windows.Forms.Button btnDeletePerson;
     }
 }

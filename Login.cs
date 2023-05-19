@@ -14,10 +14,13 @@ namespace LBA
 {
     public partial class Login : Form
     {
+        public MainPage mainPage;
+        public string userGroup;
         private PrincipalContext ctx;
         public Login()
         {
             InitializeComponent();
+            mainPage = new MainPage();
             txtLoginUsername.Text = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
             ctx = new PrincipalContext(ContextType.Domain, "172.26.66.130");
         }
@@ -29,12 +32,14 @@ namespace LBA
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public string userGroup = "";
-
         private void windowBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtLoginPassword.Focus();
         }
 
         public bool ValidateLogin(string username, string password)
@@ -58,7 +63,7 @@ namespace LBA
                             username = string.Empty;
                             password = string.Empty;
 
-                            userGroup = "G-MONC1-APP-LBA-RW";
+                            mainPage.userGroup = "G-MONC1-APP-LBA-RW";
                         }
                     }
                     catch (Exception ex)
@@ -75,7 +80,7 @@ namespace LBA
                             username = string.Empty;
                             password = string.Empty;
 
-                            userGroup = "G-MONC1-APP-LBA-R";
+                            mainPage.userGroup = "G-MONC1-APP-LBA-R";
                         }
                     }
                     catch (Exception ex)
@@ -92,7 +97,7 @@ namespace LBA
                             username = string.Empty;
                             password = string.Empty;
 
-                            userGroup = "G-MONC1-APP-LBA-W";
+                            mainPage.userGroup = "G-MONC1-APP-LBA-W";
                         }
                     }
                     catch (Exception ex)
@@ -109,7 +114,7 @@ namespace LBA
                             username = string.Empty;
                             password = string.Empty;
 
-                            userGroup = "G-MONC1-APP-LBA-ADM";
+                            mainPage.userGroup = "G-MONC1-APP-LBA-ADM";
                         }
                     }
                     catch (Exception ex)
@@ -128,6 +133,45 @@ namespace LBA
             }
             return isValid;
         }
+        private void displayMainPage()
+        {
+            mainPage.Show();
+            this.Hide();
+        }
+        private void connect()
+        {
+            if (string.IsNullOrEmpty(txtLoginUsername.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Le nom d'utilisateur est vide !");
+            }
+            else if (string.IsNullOrEmpty(txtLoginPassword.Text))
+            {
+                System.Windows.Forms.MessageBox.Show("Le champ mot de passe est vide !");
+            }
+            else if (ValidateLogin(txtLoginUsername.Text, txtLoginPassword.Text))
+            {
+                if (mainPage.userGroup == "G-MONC1-APP-LBA-R")
+                {
+                    displayMainPage();
+                }
+                else if (mainPage.userGroup == "G-MONC1-APP-LBA-RW")
+                {
+                    displayMainPage();
+                }
+                else if (mainPage.userGroup == "G-MONC1-APP-LBA-W")
+                {
+                    displayMainPage();
+                }
+                else
+                {
+                    displayMainPage();
+                }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Le mot de passe est incorrect ou le nom d'utilisateur si vous l'avez modifié");
+            }
+        }
 
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
@@ -144,90 +188,14 @@ namespace LBA
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtLoginUsername.Text))
-            {
-                System.Windows.Forms.MessageBox.Show("Le nom d'utilisateur est vide !");
-            }
-            else if (string.IsNullOrEmpty(txtLoginPassword.Text))
-            {
-                System.Windows.Forms.MessageBox.Show("Le champ mot de passe est vide !");
-            }
-            else if (ValidateLogin(txtLoginUsername.Text, txtLoginPassword.Text))
-            {
-                if (userGroup == "G-MONC1-APP-LBA-RW")
-                {
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Close();
-                }
-                else if (userGroup == "G-MONC1-APP-LBA-RW")
-                {
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Close();
-                }
-                else if (userGroup == "G-MONC1-APP-LBA-W")
-                {
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("Le mot de passe est incorrect ou le nom d'utilisateur si vous l'avez modifié");
-            }
+            connect();
         }
 
         private void txtLoginPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (string.IsNullOrEmpty(txtLoginUsername.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Le nom d'utilisateur est vide !");
-                }
-                else if (string.IsNullOrEmpty(txtLoginPassword.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Le champ mot de passe est vide !");
-                }
-                else if (ValidateLogin(txtLoginUsername.Text, txtLoginPassword.Text))
-                {
-                    if (userGroup == "G-MONC1-APP-LBA-RW")
-                    {
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                    else if (userGroup == "G-MONC1-APP-LBA-RW")
-                    {
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                    else if (userGroup == "G-MONC1-APP-LBA-W")
-                    {
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("Le mot de passe est incorrect ou le nom d'utilisateur si vous l'avez modifié");
-                }
+                connect();
             }
         }
     }

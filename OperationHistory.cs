@@ -94,6 +94,7 @@ namespace LBA
             AddOperation display6 = new AddOperation();
             display6.personToAddOperation = personIdToViewOperation;
             display6.operationHistory = this;
+            display6.normalOperation = true;
             display6.Show();
         }
     }

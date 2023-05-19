@@ -36,6 +36,7 @@ namespace LBA
             this.txtSearchClient = new System.Windows.Forms.TextBox();
             this.lblSearchClient = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnMainPageEmpty = new System.Windows.Forms.Button();
             this.navBar.SuspendLayout();
             this.searchBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -81,6 +82,7 @@ namespace LBA
             // searchBar
             // 
             this.searchBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(218)))));
+            this.searchBar.Controls.Add(this.btnMainPageEmpty);
             this.searchBar.Controls.Add(this.txtSearchClient);
             this.searchBar.Controls.Add(this.lblSearchClient);
             this.searchBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -116,6 +118,16 @@ namespace LBA
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // btnMainPageEmpty
+            // 
+            this.btnMainPageEmpty.Location = new System.Drawing.Point(478, 22);
+            this.btnMainPageEmpty.Name = "btnMainPageEmpty";
+            this.btnMainPageEmpty.Size = new System.Drawing.Size(142, 23);
+            this.btnMainPageEmpty.TabIndex = 2;
+            this.btnMainPageEmpty.Text = "Vider";
+            this.btnMainPageEmpty.UseVisualStyleBackColor = true;
+            this.btnMainPageEmpty.Click += new System.EventHandler(this.btnMainPageEmpty_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +159,6 @@ namespace LBA
         private System.Windows.Forms.TextBox txtSearchClient;
         private System.Windows.Forms.Label lblSearchClient;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnMainPageEmpty;
     }
 }

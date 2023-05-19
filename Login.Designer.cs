@@ -183,6 +183,7 @@ namespace LBA
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.windowBar.ResumeLayout(false);
             this.windowBar.PerformLayout();
             this.loginPanel.ResumeLayout(false);

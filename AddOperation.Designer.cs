@@ -31,17 +31,17 @@ namespace LBA
         {
             this.components = new System.ComponentModel.Container();
             this.addOperationPanel = new System.Windows.Forms.Panel();
-            this.tOperationTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lba_testDataSet = new LBA.lba_testDataSet();
-            this.t_OperationTypeTableAdapter = new LBA.lba_testDataSetTableAdapters.T_OperationTypeTableAdapter();
             this.btnAddOperationEmpty = new System.Windows.Forms.Button();
             this.btnAddOperation = new System.Windows.Forms.Button();
             this.txtOperationAmount = new System.Windows.Forms.TextBox();
             this.cmbAddOperationComment = new System.Windows.Forms.ComboBox();
             this.cmbAddOperationType = new System.Windows.Forms.ComboBox();
+            this.tOperationTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lba_testDataSet = new LBA.lba_testDataSet();
             this.lblOperationComment = new System.Windows.Forms.Label();
             this.lblOperationAmount = new System.Windows.Forms.Label();
             this.lblOperationType = new System.Windows.Forms.Label();
+            this.t_OperationTypeTableAdapter = new LBA.lba_testDataSetTableAdapters.T_OperationTypeTableAdapter();
             this.addOperationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tOperationTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lba_testDataSet)).BeginInit();
@@ -50,7 +50,7 @@ namespace LBA
             // addOperationPanel
             // 
             this.addOperationPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addOperationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(218)))));
+            this.addOperationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.addOperationPanel.Controls.Add(this.btnAddOperationEmpty);
             this.addOperationPanel.Controls.Add(this.btnAddOperation);
             this.addOperationPanel.Controls.Add(this.txtOperationAmount);
@@ -65,6 +65,86 @@ namespace LBA
             this.addOperationPanel.Size = new System.Drawing.Size(484, 261);
             this.addOperationPanel.TabIndex = 0;
             // 
+            // btnAddOperationEmpty
+            // 
+            this.btnAddOperationEmpty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddOperationEmpty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.btnAddOperationEmpty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddOperationEmpty.FlatAppearance.BorderSize = 0;
+            this.btnAddOperationEmpty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOperationEmpty.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOperationEmpty.ForeColor = System.Drawing.Color.White;
+            this.btnAddOperationEmpty.Location = new System.Drawing.Point(151, 162);
+            this.btnAddOperationEmpty.Name = "btnAddOperationEmpty";
+            this.btnAddOperationEmpty.Size = new System.Drawing.Size(84, 23);
+            this.btnAddOperationEmpty.TabIndex = 24;
+            this.btnAddOperationEmpty.Text = "Vider";
+            this.btnAddOperationEmpty.UseVisualStyleBackColor = false;
+            this.btnAddOperationEmpty.Click += new System.EventHandler(this.btnAddOperationEmpty_Click);
+            // 
+            // btnAddOperation
+            // 
+            this.btnAddOperation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddOperation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.btnAddOperation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddOperation.FlatAppearance.BorderSize = 0;
+            this.btnAddOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddOperation.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddOperation.ForeColor = System.Drawing.Color.White;
+            this.btnAddOperation.Location = new System.Drawing.Point(258, 162);
+            this.btnAddOperation.Name = "btnAddOperation";
+            this.btnAddOperation.Size = new System.Drawing.Size(99, 23);
+            this.btnAddOperation.TabIndex = 23;
+            this.btnAddOperation.Text = "Ajouter transaction";
+            this.btnAddOperation.UseVisualStyleBackColor = false;
+            this.btnAddOperation.Click += new System.EventHandler(this.btnAddOperation_Click);
+            // 
+            // txtOperationAmount
+            // 
+            this.txtOperationAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOperationAmount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOperationAmount.Location = new System.Drawing.Point(210, 99);
+            this.txtOperationAmount.Name = "txtOperationAmount";
+            this.txtOperationAmount.Size = new System.Drawing.Size(147, 21);
+            this.txtOperationAmount.TabIndex = 22;
+            // 
+            // cmbAddOperationComment
+            // 
+            this.cmbAddOperationComment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbAddOperationComment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAddOperationComment.FormattingEnabled = true;
+            this.cmbAddOperationComment.Items.AddRange(new object[] {
+            "Clarification",
+            "Identification",
+            "Recensement",
+            "Suivi client"});
+            this.cmbAddOperationComment.Location = new System.Drawing.Point(210, 126);
+            this.cmbAddOperationComment.Name = "cmbAddOperationComment";
+            this.cmbAddOperationComment.Size = new System.Drawing.Size(147, 24);
+            this.cmbAddOperationComment.TabIndex = 21;
+            // 
+            // cmbAddOperationType
+            // 
+            this.cmbAddOperationType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbAddOperationType.DataSource = this.tOperationTypeBindingSource;
+            this.cmbAddOperationType.DisplayMember = "operationTypeName";
+            this.cmbAddOperationType.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAddOperationType.FormattingEnabled = true;
+            this.cmbAddOperationType.Location = new System.Drawing.Point(210, 69);
+            this.cmbAddOperationType.Name = "cmbAddOperationType";
+            this.cmbAddOperationType.Size = new System.Drawing.Size(147, 24);
+            this.cmbAddOperationType.TabIndex = 20;
+            // 
             // tOperationTypeBindingSource
             // 
             this.tOperationTypeBindingSource.DataMember = "T_OperationType";
@@ -75,82 +155,17 @@ namespace LBA
             this.lba_testDataSet.DataSetName = "lba_testDataSet";
             this.lba_testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // t_OperationTypeTableAdapter
-            // 
-            this.t_OperationTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnAddOperationEmpty
-            // 
-            this.btnAddOperationEmpty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddOperationEmpty.Location = new System.Drawing.Point(198, 162);
-            this.btnAddOperationEmpty.Name = "btnAddOperationEmpty";
-            this.btnAddOperationEmpty.Size = new System.Drawing.Size(84, 23);
-            this.btnAddOperationEmpty.TabIndex = 24;
-            this.btnAddOperationEmpty.Text = "Vider";
-            this.btnAddOperationEmpty.UseVisualStyleBackColor = true;
-            // 
-            // btnAddOperation
-            // 
-            this.btnAddOperation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddOperation.Location = new System.Drawing.Point(288, 162);
-            this.btnAddOperation.Name = "btnAddOperation";
-            this.btnAddOperation.Size = new System.Drawing.Size(99, 23);
-            this.btnAddOperation.TabIndex = 23;
-            this.btnAddOperation.Text = "Ajouter transaction";
-            this.btnAddOperation.UseVisualStyleBackColor = true;
-            // 
-            // txtOperationAmount
-            // 
-            this.txtOperationAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOperationAmount.Location = new System.Drawing.Point(210, 99);
-            this.txtOperationAmount.Name = "txtOperationAmount";
-            this.txtOperationAmount.Size = new System.Drawing.Size(147, 20);
-            this.txtOperationAmount.TabIndex = 22;
-            // 
-            // cmbAddOperationComment
-            // 
-            this.cmbAddOperationComment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbAddOperationComment.FormattingEnabled = true;
-            this.cmbAddOperationComment.Items.AddRange(new object[] {
-            "Clarification",
-            "Identification",
-            "Recensement",
-            "Suivi client"});
-            this.cmbAddOperationComment.Location = new System.Drawing.Point(210, 121);
-            this.cmbAddOperationComment.Name = "cmbAddOperationComment";
-            this.cmbAddOperationComment.Size = new System.Drawing.Size(147, 21);
-            this.cmbAddOperationComment.TabIndex = 21;
-            // 
-            // cmbAddOperationType
-            // 
-            this.cmbAddOperationType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbAddOperationType.DataSource = this.tOperationTypeBindingSource;
-            this.cmbAddOperationType.DisplayMember = "operationTypeName";
-            this.cmbAddOperationType.FormattingEnabled = true;
-            this.cmbAddOperationType.Location = new System.Drawing.Point(210, 76);
-            this.cmbAddOperationType.Name = "cmbAddOperationType";
-            this.cmbAddOperationType.Size = new System.Drawing.Size(147, 21);
-            this.cmbAddOperationType.TabIndex = 20;
-            // 
             // lblOperationComment
             // 
             this.lblOperationComment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOperationComment.AutoSize = true;
-            this.lblOperationComment.Location = new System.Drawing.Point(130, 126);
+            this.lblOperationComment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationComment.ForeColor = System.Drawing.Color.White;
+            this.lblOperationComment.Location = new System.Drawing.Point(122, 129);
             this.lblOperationComment.Name = "lblOperationComment";
-            this.lblOperationComment.Size = new System.Drawing.Size(68, 13);
+            this.lblOperationComment.Size = new System.Drawing.Size(78, 15);
             this.lblOperationComment.TabIndex = 19;
             this.lblOperationComment.Text = "Commentaire";
             // 
@@ -160,9 +175,11 @@ namespace LBA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOperationAmount.AutoSize = true;
-            this.lblOperationAmount.Location = new System.Drawing.Point(152, 101);
+            this.lblOperationAmount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationAmount.ForeColor = System.Drawing.Color.White;
+            this.lblOperationAmount.Location = new System.Drawing.Point(148, 102);
             this.lblOperationAmount.Name = "lblOperationAmount";
-            this.lblOperationAmount.Size = new System.Drawing.Size(46, 13);
+            this.lblOperationAmount.Size = new System.Drawing.Size(51, 15);
             this.lblOperationAmount.TabIndex = 18;
             this.lblOperationAmount.Text = "Montant";
             // 
@@ -172,11 +189,17 @@ namespace LBA
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOperationType.AutoSize = true;
-            this.lblOperationType.Location = new System.Drawing.Point(97, 76);
+            this.lblOperationType.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperationType.ForeColor = System.Drawing.Color.White;
+            this.lblOperationType.Location = new System.Drawing.Point(88, 72);
             this.lblOperationType.Name = "lblOperationType";
-            this.lblOperationType.Size = new System.Drawing.Size(101, 13);
+            this.lblOperationType.Size = new System.Drawing.Size(112, 15);
             this.lblOperationType.TabIndex = 17;
             this.lblOperationType.Text = "Type de transaction";
+            // 
+            // t_OperationTypeTableAdapter
+            // 
+            this.t_OperationTypeTableAdapter.ClearBeforeFill = true;
             // 
             // AddOperation
             // 
@@ -185,6 +208,7 @@ namespace LBA
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(484, 261);
             this.Controls.Add(this.addOperationPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddOperation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBA - Ajout d\'une transaction";

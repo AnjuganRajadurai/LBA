@@ -45,7 +45,7 @@ namespace LBA
             // 
             // windowBar
             // 
-            this.windowBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.windowBar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.windowBar.Controls.Add(this.lblLBALogin);
             this.windowBar.Controls.Add(this.btnCloseApp);
             this.windowBar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -58,11 +58,11 @@ namespace LBA
             // lblLBALogin
             // 
             this.lblLBALogin.AutoSize = true;
-            this.lblLBALogin.Font = new System.Drawing.Font("Lucien Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLBALogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLBALogin.ForeColor = System.Drawing.Color.White;
             this.lblLBALogin.Location = new System.Drawing.Point(3, 5);
             this.lblLBALogin.Name = "lblLBALogin";
-            this.lblLBALogin.Size = new System.Drawing.Size(94, 16);
+            this.lblLBALogin.Size = new System.Drawing.Size(80, 16);
             this.lblLBALogin.TabIndex = 2;
             this.lblLBALogin.Text = "LBA - Login";
             // 
@@ -73,7 +73,7 @@ namespace LBA
             this.btnCloseApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCloseApp.FlatAppearance.BorderSize = 0;
             this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseApp.Font = new System.Drawing.Font("Lucien Regular", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCloseApp.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseApp.Location = new System.Drawing.Point(729, 0);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Size = new System.Drawing.Size(71, 24);
@@ -84,7 +84,7 @@ namespace LBA
             // 
             // loginPanel
             // 
-            this.loginPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(215)))), ((int)(((byte)(167)))));
+            this.loginPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.loginPanel.Controls.Add(this.btnConnect);
             this.loginPanel.Controls.Add(this.btnEmpty);
             this.loginPanel.Controls.Add(this.txtLoginPassword);
@@ -104,7 +104,7 @@ namespace LBA
             this.btnConnect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnConnect.FlatAppearance.BorderSize = 0;
             this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.Font = new System.Drawing.Font("Lucien Regular", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConnect.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect.ForeColor = System.Drawing.Color.White;
             this.btnConnect.Location = new System.Drawing.Point(370, 243);
             this.btnConnect.Name = "btnConnect";
@@ -121,7 +121,7 @@ namespace LBA
             this.btnEmpty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEmpty.FlatAppearance.BorderSize = 0;
             this.btnEmpty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpty.Font = new System.Drawing.Font("Lucien Regular", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpty.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpty.ForeColor = System.Drawing.Color.White;
             this.btnEmpty.Location = new System.Drawing.Point(285, 243);
             this.btnEmpty.Name = "btnEmpty";
@@ -134,9 +134,10 @@ namespace LBA
             // txtLoginPassword
             // 
             this.txtLoginPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLoginPassword.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginPassword.Location = new System.Drawing.Point(285, 203);
             this.txtLoginPassword.Name = "txtLoginPassword";
-            this.txtLoginPassword.Size = new System.Drawing.Size(178, 20);
+            this.txtLoginPassword.Size = new System.Drawing.Size(178, 21);
             this.txtLoginPassword.TabIndex = 3;
             this.txtLoginPassword.UseSystemPasswordChar = true;
             this.txtLoginPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoginPassword_KeyDown);
@@ -144,19 +145,21 @@ namespace LBA
             // txtLoginUsername
             // 
             this.txtLoginUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtLoginUsername.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoginUsername.Location = new System.Drawing.Point(285, 158);
             this.txtLoginUsername.Name = "txtLoginUsername";
-            this.txtLoginUsername.Size = new System.Drawing.Size(178, 20);
+            this.txtLoginUsername.Size = new System.Drawing.Size(178, 21);
             this.txtLoginUsername.TabIndex = 2;
             // 
             // lblPassword
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Lucien Regular", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(183, 207);
+            this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(197, 205);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(96, 14);
+            this.lblPassword.Size = new System.Drawing.Size(78, 15);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Mot de passe";
             // 
@@ -164,10 +167,11 @@ namespace LBA
             // 
             this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Lucien Regular", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(155, 162);
+            this.lblUsername.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(183, 160);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(124, 14);
+            this.lblUsername.Size = new System.Drawing.Size(96, 15);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Nom d\'utilisateur";
             // 

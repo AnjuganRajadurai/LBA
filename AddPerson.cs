@@ -33,22 +33,14 @@ namespace LBA
             }
 
         }
-        /*private bool regexNamesChecked()
-        {
-            bool isRegexNamesCheked;
-            string patternNames = ".+";
-            Regex namesRG = new Regex(patternNames);
-            if (!(isRegexNamesCheked = namesRG.IsMatch(txtAddPersonFirstName.Text)))
-            {
-                System.Windows.Forms.MessageBox.Show("Merci de rentrer uniquement des lettres !");
-            }
-            return isRegexNamesCheked;
-
-        }*/
         private void addPerson()
         {
-            /*if (regexNamesChecked())
-            {*/
+            string patternNames = @"^[\p{L} \.'\-]+$";
+            string patternCountry = @"^[a-zA-Z]+$";
+            string patternJob = @"^[a-zA-Z]+$";
+
+            if (Regex.IsMatch(txtAddPersonFirstName.Text,patternNames) && Regex.IsMatch(txtAddPersonLastName.Text, patternNames)  && Regex.IsMatch(txtAddPersonOtherName.Text, patternNames) && Regex.IsMatch(txtAddPersonCountry.Text, patternCountry,RegexOptions.IgnorePatternWhitespace) && Regex.IsMatch(txtAddPersonJob.Text, patternJob))
+            {
                 lba_testEntities1 db = new lba_testEntities1();
 
                 var lastPersonAdded = db.T_Person.Add(new T_Person()
@@ -72,8 +64,12 @@ namespace LBA
                 mainPage.searchClient();
                 System.Windows.Forms.MessageBox.Show("Client ajouté avec succès !");
                 operationCanceled = false;
-                this.Close();/*
-            }*/
+                this.Close();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Les champs ne respectent pas les règles !");
+            }
             
         }
 

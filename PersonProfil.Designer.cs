@@ -88,26 +88,48 @@ namespace LBA
             // 
             // btnPersonProfilEmpty
             // 
+            this.btnPersonProfilEmpty.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPersonProfilEmpty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.btnPersonProfilEmpty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPersonProfilEmpty.FlatAppearance.BorderSize = 0;
+            this.btnPersonProfilEmpty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonProfilEmpty.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonProfilEmpty.ForeColor = System.Drawing.Color.White;
             this.btnPersonProfilEmpty.Location = new System.Drawing.Point(461, 405);
             this.btnPersonProfilEmpty.Name = "btnPersonProfilEmpty";
-            this.btnPersonProfilEmpty.Size = new System.Drawing.Size(123, 20);
+            this.btnPersonProfilEmpty.Size = new System.Drawing.Size(123, 29);
             this.btnPersonProfilEmpty.TabIndex = 28;
             this.btnPersonProfilEmpty.Text = "Vider";
-            this.btnPersonProfilEmpty.UseVisualStyleBackColor = true;
+            this.btnPersonProfilEmpty.UseVisualStyleBackColor = false;
             this.btnPersonProfilEmpty.Click += new System.EventHandler(this.btnPersonProfilEmpty_Click);
             // 
             // btnPersonProfilSave
             // 
+            this.btnPersonProfilSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPersonProfilSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.btnPersonProfilSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPersonProfilSave.FlatAppearance.BorderSize = 0;
+            this.btnPersonProfilSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonProfilSave.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonProfilSave.ForeColor = System.Drawing.Color.White;
             this.btnPersonProfilSave.Location = new System.Drawing.Point(626, 405);
             this.btnPersonProfilSave.Name = "btnPersonProfilSave";
-            this.btnPersonProfilSave.Size = new System.Drawing.Size(161, 21);
+            this.btnPersonProfilSave.Size = new System.Drawing.Size(161, 29);
             this.btnPersonProfilSave.TabIndex = 27;
             this.btnPersonProfilSave.Text = "Sauvegarder";
-            this.btnPersonProfilSave.UseVisualStyleBackColor = true;
+            this.btnPersonProfilSave.UseVisualStyleBackColor = false;
             this.btnPersonProfilSave.Click += new System.EventHandler(this.btnPersonProfilSave_Click);
             // 
             // rtbPersonProfilComment
             // 
+            this.rtbPersonProfilComment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbPersonProfilComment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbPersonProfilComment.Location = new System.Drawing.Point(16, 267);
             this.rtbPersonProfilComment.Name = "rtbPersonProfilComment";
             this.rtbPersonProfilComment.Size = new System.Drawing.Size(772, 119);
@@ -116,6 +138,10 @@ namespace LBA
             // 
             // cmbPersonProfilDocType
             // 
+            this.cmbPersonProfilDocType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPersonProfilDocType.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPersonProfilDocType.FormattingEnabled = true;
             this.cmbPersonProfilDocType.Items.AddRange(new object[] {
             "Carte d\'identité",
@@ -125,47 +151,67 @@ namespace LBA
             "Permis de conduire Suisse",
             "Permis de légimation Suisse",
             "Titre de séjour Suisse"});
-            this.cmbPersonProfilDocType.Location = new System.Drawing.Point(453, 73);
+            this.cmbPersonProfilDocType.Location = new System.Drawing.Point(467, 72);
             this.cmbPersonProfilDocType.Name = "cmbPersonProfilDocType";
-            this.cmbPersonProfilDocType.Size = new System.Drawing.Size(150, 21);
+            this.cmbPersonProfilDocType.Size = new System.Drawing.Size(150, 24);
             this.cmbPersonProfilDocType.TabIndex = 25;
             // 
             // txtPersonProfilDocNumber
             // 
-            this.txtPersonProfilDocNumber.Location = new System.Drawing.Point(453, 129);
+            this.txtPersonProfilDocNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilDocNumber.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonProfilDocNumber.Location = new System.Drawing.Point(467, 128);
             this.txtPersonProfilDocNumber.Name = "txtPersonProfilDocNumber";
-            this.txtPersonProfilDocNumber.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilDocNumber.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilDocNumber.TabIndex = 24;
             // 
             // dtpPersonProfilIdValidity
             // 
-            this.dtpPersonProfilIdValidity.Location = new System.Drawing.Point(453, 103);
+            this.dtpPersonProfilIdValidity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpPersonProfilIdValidity.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPersonProfilIdValidity.Location = new System.Drawing.Point(467, 102);
             this.dtpPersonProfilIdValidity.Name = "dtpPersonProfilIdValidity";
-            this.dtpPersonProfilIdValidity.Size = new System.Drawing.Size(185, 20);
+            this.dtpPersonProfilIdValidity.Size = new System.Drawing.Size(185, 21);
             this.dtpPersonProfilIdValidity.TabIndex = 23;
             // 
             // txtPersonProfilJob
             // 
-            this.txtPersonProfilJob.Location = new System.Drawing.Point(453, 48);
+            this.txtPersonProfilJob.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilJob.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPersonProfilJob.Location = new System.Drawing.Point(467, 47);
             this.txtPersonProfilJob.Name = "txtPersonProfilJob";
-            this.txtPersonProfilJob.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilJob.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilJob.TabIndex = 21;
             // 
             // dtpPersonProfilBirthday
             // 
-            this.dtpPersonProfilBirthday.Location = new System.Drawing.Point(453, 22);
+            this.dtpPersonProfilBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpPersonProfilBirthday.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPersonProfilBirthday.Location = new System.Drawing.Point(467, 21);
             this.dtpPersonProfilBirthday.Name = "dtpPersonProfilBirthday";
-            this.dtpPersonProfilBirthday.Size = new System.Drawing.Size(185, 20);
+            this.dtpPersonProfilBirthday.Size = new System.Drawing.Size(185, 21);
             this.dtpPersonProfilBirthday.TabIndex = 20;
             // 
             // cmbPersonProfilNationality
             // 
+            this.cmbPersonProfilNationality.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbPersonProfilNationality.DataSource = this.tNationalityBindingSource1;
             this.cmbPersonProfilNationality.DisplayMember = "countryName";
+            this.cmbPersonProfilNationality.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPersonProfilNationality.FormattingEnabled = true;
             this.cmbPersonProfilNationality.Location = new System.Drawing.Point(155, 181);
             this.cmbPersonProfilNationality.Name = "cmbPersonProfilNationality";
-            this.cmbPersonProfilNationality.Size = new System.Drawing.Size(150, 21);
+            this.cmbPersonProfilNationality.Size = new System.Drawing.Size(150, 24);
             this.cmbPersonProfilNationality.TabIndex = 19;
             // 
             // tNationalityBindingSource1
@@ -180,166 +226,255 @@ namespace LBA
             // 
             // txtPersonProfilCountry
             // 
+            this.txtPersonProfilCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilCountry.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonProfilCountry.Location = new System.Drawing.Point(155, 155);
             this.txtPersonProfilCountry.Name = "txtPersonProfilCountry";
-            this.txtPersonProfilCountry.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilCountry.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilCountry.TabIndex = 18;
             // 
             // txtPersonProfilCity
             // 
+            this.txtPersonProfilCity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilCity.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonProfilCity.Location = new System.Drawing.Point(155, 129);
             this.txtPersonProfilCity.Name = "txtPersonProfilCity";
-            this.txtPersonProfilCity.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilCity.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilCity.TabIndex = 17;
             // 
             // txtPersonProfilRoad
             // 
+            this.txtPersonProfilRoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilRoad.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonProfilRoad.Location = new System.Drawing.Point(155, 103);
             this.txtPersonProfilRoad.Name = "txtPersonProfilRoad";
-            this.txtPersonProfilRoad.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilRoad.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilRoad.TabIndex = 16;
             // 
             // txtPersonProfilOtherName
             // 
+            this.txtPersonProfilOtherName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilOtherName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonProfilOtherName.Location = new System.Drawing.Point(155, 74);
             this.txtPersonProfilOtherName.Name = "txtPersonProfilOtherName";
-            this.txtPersonProfilOtherName.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilOtherName.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilOtherName.TabIndex = 15;
             // 
             // txtPersonProfilFirstName
             // 
+            this.txtPersonProfilFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilFirstName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonProfilFirstName.Location = new System.Drawing.Point(155, 48);
             this.txtPersonProfilFirstName.Name = "txtPersonProfilFirstName";
-            this.txtPersonProfilFirstName.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilFirstName.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilFirstName.TabIndex = 14;
             // 
             // txtPersonProfilLastName
             // 
+            this.txtPersonProfilLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPersonProfilLastName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersonProfilLastName.Location = new System.Drawing.Point(155, 22);
             this.txtPersonProfilLastName.Name = "txtPersonProfilLastName";
-            this.txtPersonProfilLastName.Size = new System.Drawing.Size(150, 20);
+            this.txtPersonProfilLastName.Size = new System.Drawing.Size(150, 21);
             this.txtPersonProfilLastName.TabIndex = 13;
             // 
             // lblPersonProfilOtherName
             // 
+            this.lblPersonProfilOtherName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilOtherName.AutoSize = true;
+            this.lblPersonProfilOtherName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilOtherName.ForeColor = System.Drawing.Color.White;
             this.lblPersonProfilOtherName.Location = new System.Drawing.Point(13, 77);
             this.lblPersonProfilOtherName.Name = "lblPersonProfilOtherName";
-            this.lblPersonProfilOtherName.Size = new System.Drawing.Size(116, 13);
+            this.lblPersonProfilOtherName.Size = new System.Drawing.Size(132, 15);
             this.lblPersonProfilOtherName.TabIndex = 12;
             this.lblPersonProfilOtherName.Text = "Autre(s) nom et prénom";
             // 
             // lbPersonProfilComment
             // 
+            this.lbPersonProfilComment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPersonProfilComment.AutoSize = true;
+            this.lbPersonProfilComment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPersonProfilComment.ForeColor = System.Drawing.Color.White;
             this.lbPersonProfilComment.Location = new System.Drawing.Point(13, 251);
             this.lbPersonProfilComment.Name = "lbPersonProfilComment";
-            this.lbPersonProfilComment.Size = new System.Drawing.Size(195, 13);
+            this.lbPersonProfilComment.Size = new System.Drawing.Size(221, 15);
             this.lbPersonProfilComment.TabIndex = 11;
             this.lbPersonProfilComment.Text = "Remarques et raison de l\'enregistrement";
             // 
             // lblPersonProfilJob
             // 
+            this.lblPersonProfilJob.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilJob.AutoSize = true;
+            this.lblPersonProfilJob.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilJob.ForeColor = System.Drawing.Color.White;
             this.lblPersonProfilJob.Location = new System.Drawing.Point(391, 51);
             this.lblPersonProfilJob.Name = "lblPersonProfilJob";
-            this.lblPersonProfilJob.Size = new System.Drawing.Size(56, 13);
+            this.lblPersonProfilJob.Size = new System.Drawing.Size(62, 15);
             this.lblPersonProfilJob.TabIndex = 10;
             this.lblPersonProfilJob.Text = "Profession";
             // 
             // lblPersonProfilDocNumber
             // 
+            this.lblPersonProfilDocNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilDocNumber.AutoSize = true;
-            this.lblPersonProfilDocNumber.Location = new System.Drawing.Point(338, 129);
+            this.lblPersonProfilDocNumber.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilDocNumber.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilDocNumber.Location = new System.Drawing.Point(329, 129);
             this.lblPersonProfilDocNumber.Name = "lblPersonProfilDocNumber";
-            this.lblPersonProfilDocNumber.Size = new System.Drawing.Size(109, 13);
+            this.lblPersonProfilDocNumber.Size = new System.Drawing.Size(124, 15);
             this.lblPersonProfilDocNumber.TabIndex = 9;
             this.lblPersonProfilDocNumber.Text = "Numéro de document";
             // 
             // lblPersonProfilIdValidity
             // 
+            this.lblPersonProfilIdValidity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilIdValidity.AutoSize = true;
-            this.lblPersonProfilIdValidity.Location = new System.Drawing.Point(361, 103);
+            this.lblPersonProfilIdValidity.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilIdValidity.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilIdValidity.Location = new System.Drawing.Point(355, 103);
             this.lblPersonProfilIdValidity.Name = "lblPersonProfilIdValidity";
-            this.lblPersonProfilIdValidity.Size = new System.Drawing.Size(86, 13);
+            this.lblPersonProfilIdValidity.Size = new System.Drawing.Size(98, 15);
             this.lblPersonProfilIdValidity.TabIndex = 8;
             this.lblPersonProfilIdValidity.Text = "Date d\'expiration";
             // 
             // lblPersonProfilDocumentType
             // 
+            this.lblPersonProfilDocumentType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilDocumentType.AutoSize = true;
-            this.lblPersonProfilDocumentType.Location = new System.Drawing.Point(351, 77);
+            this.lblPersonProfilDocumentType.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilDocumentType.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilDocumentType.Location = new System.Drawing.Point(347, 77);
             this.lblPersonProfilDocumentType.Name = "lblPersonProfilDocumentType";
-            this.lblPersonProfilDocumentType.Size = new System.Drawing.Size(96, 13);
+            this.lblPersonProfilDocumentType.Size = new System.Drawing.Size(106, 15);
             this.lblPersonProfilDocumentType.TabIndex = 7;
             this.lblPersonProfilDocumentType.Text = "Type de document";
             // 
             // lblPersonProfilBirthday
             // 
+            this.lblPersonProfilBirthday.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilBirthday.AutoSize = true;
-            this.lblPersonProfilBirthday.Location = new System.Drawing.Point(351, 25);
+            this.lblPersonProfilBirthday.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilBirthday.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilBirthday.Location = new System.Drawing.Point(346, 25);
             this.lblPersonProfilBirthday.Name = "lblPersonProfilBirthday";
-            this.lblPersonProfilBirthday.Size = new System.Drawing.Size(96, 13);
+            this.lblPersonProfilBirthday.Size = new System.Drawing.Size(107, 15);
             this.lblPersonProfilBirthday.TabIndex = 6;
             this.lblPersonProfilBirthday.Text = "Date de naissance";
             // 
             // lblPersonProfilCountry
             // 
+            this.lblPersonProfilCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilCountry.AutoSize = true;
-            this.lblPersonProfilCountry.Location = new System.Drawing.Point(35, 155);
+            this.lblPersonProfilCountry.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilCountry.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilCountry.Location = new System.Drawing.Point(39, 155);
             this.lblPersonProfilCountry.Name = "lblPersonProfilCountry";
-            this.lblPersonProfilCountry.Size = new System.Drawing.Size(94, 13);
+            this.lblPersonProfilCountry.Size = new System.Drawing.Size(106, 15);
             this.lblPersonProfilCountry.TabIndex = 5;
             this.lblPersonProfilCountry.Text = "Pays de résidence";
             // 
             // lblPersonProfilNationality
             // 
+            this.lblPersonProfilNationality.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilNationality.AutoSize = true;
-            this.lblPersonProfilNationality.Location = new System.Drawing.Point(72, 181);
+            this.lblPersonProfilNationality.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilNationality.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilNationality.Location = new System.Drawing.Point(79, 181);
             this.lblPersonProfilNationality.Name = "lblPersonProfilNationality";
-            this.lblPersonProfilNationality.Size = new System.Drawing.Size(57, 13);
+            this.lblPersonProfilNationality.Size = new System.Drawing.Size(66, 15);
             this.lblPersonProfilNationality.TabIndex = 4;
             this.lblPersonProfilNationality.Text = "Nationalité";
             // 
             // lblPersonProfilCity
             // 
+            this.lblPersonProfilCity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilCity.AutoSize = true;
-            this.lblPersonProfilCity.Location = new System.Drawing.Point(103, 129);
+            this.lblPersonProfilCity.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilCity.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilCity.Location = new System.Drawing.Point(114, 129);
             this.lblPersonProfilCity.Name = "lblPersonProfilCity";
-            this.lblPersonProfilCity.Size = new System.Drawing.Size(26, 13);
+            this.lblPersonProfilCity.Size = new System.Drawing.Size(31, 15);
             this.lblPersonProfilCity.TabIndex = 3;
             this.lblPersonProfilCity.Text = "Ville";
             // 
             // lblPersonProfilRoad
             // 
+            this.lblPersonProfilRoad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilRoad.AutoSize = true;
-            this.lblPersonProfilRoad.Location = new System.Drawing.Point(77, 103);
+            this.lblPersonProfilRoad.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilRoad.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilRoad.Location = new System.Drawing.Point(90, 103);
             this.lblPersonProfilRoad.Name = "lblPersonProfilRoad";
-            this.lblPersonProfilRoad.Size = new System.Drawing.Size(52, 13);
+            this.lblPersonProfilRoad.Size = new System.Drawing.Size(55, 15);
             this.lblPersonProfilRoad.TabIndex = 2;
             this.lblPersonProfilRoad.Text = "Rue et n°";
             // 
             // lblPersonProfilFirstName
             // 
+            this.lblPersonProfilFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilFirstName.AutoSize = true;
-            this.lblPersonProfilFirstName.Location = new System.Drawing.Point(86, 51);
+            this.lblPersonProfilFirstName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilFirstName.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilFirstName.Location = new System.Drawing.Point(97, 51);
             this.lblPersonProfilFirstName.Name = "lblPersonProfilFirstName";
-            this.lblPersonProfilFirstName.Size = new System.Drawing.Size(43, 13);
+            this.lblPersonProfilFirstName.Size = new System.Drawing.Size(48, 15);
             this.lblPersonProfilFirstName.TabIndex = 1;
             this.lblPersonProfilFirstName.Text = "Prénom";
             // 
             // lblPersonProfilLastName
             // 
+            this.lblPersonProfilLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPersonProfilLastName.AutoSize = true;
-            this.lblPersonProfilLastName.Location = new System.Drawing.Point(100, 25);
+            this.lblPersonProfilLastName.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonProfilLastName.ForeColor = System.Drawing.Color.White;
+            this.lblPersonProfilLastName.Location = new System.Drawing.Point(113, 25);
             this.lblPersonProfilLastName.Name = "lblPersonProfilLastName";
-            this.lblPersonProfilLastName.Size = new System.Drawing.Size(29, 13);
+            this.lblPersonProfilLastName.Size = new System.Drawing.Size(32, 15);
             this.lblPersonProfilLastName.TabIndex = 0;
             this.lblPersonProfilLastName.Text = "Nom";
             // 
             // personProfilPanel
             // 
-            this.personProfilPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(237)))), ((int)(((byte)(218)))));
+            this.personProfilPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.personProfilPanel.Controls.Add(this.btnDeletePerson);
             this.personProfilPanel.Controls.Add(this.btnPersonProfilEmpty);
             this.personProfilPanel.Controls.Add(this.btnPersonProfilSave);
@@ -377,15 +512,18 @@ namespace LBA
             // 
             // btnDeletePerson
             // 
-            this.btnDeletePerson.BackColor = System.Drawing.Color.Red;
+            this.btnDeletePerson.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeletePerson.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.btnDeletePerson.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDeletePerson.FlatAppearance.BorderSize = 0;
             this.btnDeletePerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletePerson.Font = new System.Drawing.Font("Lucien Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletePerson.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletePerson.ForeColor = System.Drawing.Color.White;
-            this.btnDeletePerson.Location = new System.Drawing.Point(16, 392);
+            this.btnDeletePerson.Location = new System.Drawing.Point(16, 405);
             this.btnDeletePerson.Name = "btnDeletePerson";
-            this.btnDeletePerson.Size = new System.Drawing.Size(135, 42);
+            this.btnDeletePerson.Size = new System.Drawing.Size(135, 29);
             this.btnDeletePerson.TabIndex = 29;
             this.btnDeletePerson.Text = "Supprimer le client";
             this.btnDeletePerson.UseVisualStyleBackColor = false;
@@ -397,6 +535,7 @@ namespace LBA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.personProfilPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PersonProfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBA - Profil client";

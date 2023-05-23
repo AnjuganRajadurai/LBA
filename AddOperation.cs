@@ -16,16 +16,20 @@ namespace LBA
     {
         public AddPerson addPerson;
         public OperationHistory operationHistory;
+        public bool closeOperation = true;
 
         public AddOperation()
         {
             InitializeComponent();
         }
+
+        //Function to add an operation
         private void addOperation()
         {
             string patternAmount = @"^\d+([.]\d{1,2})?$";
             if (Regex.IsMatch(txtOperationAmount.Text, patternAmount))
             {
+                closeOperation = true;
                 if (normalOperation)
                 {
                     try
@@ -60,7 +64,6 @@ namespace LBA
                             operationComment = cmbAddOperationComment.Text
                         });
                         db.SaveChanges();
-                        System.Windows.Forms.MessageBox.Show("Transaction ajoutée avec succès !");
                     }
                     catch (Exception ex)
                     {
@@ -112,9 +115,12 @@ namespace LBA
             }
             else
             {
+                closeOperation = false;
                 System.Windows.Forms.MessageBox.Show("Merci de mettre un point avant vos décimales !");
             }      
         }
+
+        //Button to empty the fields
         private void btnAddOperationEmpty_Click(object sender, EventArgs e)
         {
             cmbAddOperationType.SelectedItem = null;
@@ -122,6 +128,7 @@ namespace LBA
             cmbAddOperationComment.SelectedItem = null;
         }
 
+        //Button to add on operation
         private void btnAddOperation_Click(object sender, EventArgs e)
         {
             addOperation();
@@ -129,14 +136,16 @@ namespace LBA
             {
                 operationHistory.viewOperation();
             }
-            this.Close();
+            if (closeOperation)
+            {
+                closeOperation = true;
+                this.Close();
+            }
         }
 
         private void AddOperation_Load(object sender, EventArgs e)
         {
-            // TODO: cette ligne de code charge les données dans la table 'lba_testDataSet.T_OperationType'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.t_OperationTypeTableAdapter.Fill(this.lba_testDataSet.T_OperationType);
-
         }
     }
 }

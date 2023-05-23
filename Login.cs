@@ -21,10 +21,13 @@ namespace LBA
         {
             InitializeComponent();
             mainPage = new MainPage();
+            //To get the actual connect user
             txtLoginUsername.Text = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+            //Connection to the Domain Controller
             ctx = new PrincipalContext(ContextType.Domain, "172.26.66.130");
         }
 
+        //To be enabled to drag the Login Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -42,10 +45,12 @@ namespace LBA
             txtLoginPassword.Focus();
         }
 
+        //Function to validate if user if from Active Directory
         public bool ValidateLogin(string username, string password)
         {
             bool isValid = false;
 
+            //Find the user's group
             UserPrincipal user = UserPrincipal.FindByIdentity(ctx, username);
             GroupPrincipal group1 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-RW");
             GroupPrincipal group2 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-R");
@@ -133,11 +138,14 @@ namespace LBA
             }
             return isValid;
         }
+
         private void displayMainPage()
         {
             mainPage.Show();
             this.Hide();
         }
+
+        //Function to connect to the main Page
         private void connect()
         {
             if (string.IsNullOrEmpty(txtLoginUsername.Text))
@@ -173,11 +181,13 @@ namespace LBA
             }
         }
 
+        //Button to close the app
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Button to empty the fields
         private void btnEmpty_Click(object sender, EventArgs e)
         {
             txtLoginUsername.Clear();
@@ -186,11 +196,13 @@ namespace LBA
             txtLoginUsername.Focus();
         }
 
+        //Button to try connecting
         private void btnConnect_Click(object sender, EventArgs e)
         {
             connect();
         }
 
+        //Keydown to try connecting
         private void txtLoginPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

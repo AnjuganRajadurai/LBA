@@ -21,6 +21,8 @@ namespace LBA
         {
             InitializeComponent();
         }
+
+        //Special close if AddPerson is closed before AddOperation
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -33,6 +35,8 @@ namespace LBA
             }
 
         }
+
+        //Function to add a person
         private void addPerson()
         {
             string patternNames = @"^[\p{L} \.'\-]+$";
@@ -62,7 +66,6 @@ namespace LBA
                 db.SaveChanges();
                 lastIdAdded = lastPersonAdded.personId;
                 mainPage.searchClient();
-                System.Windows.Forms.MessageBox.Show("Client ajouté avec succès !");
                 operationCanceled = false;
                 this.Close();
             }
@@ -73,6 +76,7 @@ namespace LBA
             
         }
 
+        //Button to empty the fields
         private void btnAddPersonEmpty_Click(object sender, EventArgs e)
         {
             txtAddPersonLastName.Clear();
@@ -90,6 +94,7 @@ namespace LBA
             rtbAddPersonComment.Clear();
         }
 
+        //Button to add a person
         private void btnAddPersonSave_Click(object sender, EventArgs e)
         {
             try

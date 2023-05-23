@@ -19,12 +19,15 @@ namespace LBA
         {
             InitializeComponent();
         }
+
         private void PersonProfil_Load(object sender, EventArgs e)
         {
             // TODO: cette ligne de code charge les données dans la table 'lba_testDataSet.T_Nationality'. Vous pouvez la déplacer ou la supprimer selon les besoins.
             this.t_NationalityTableAdapter.Fill(this.lba_testDataSet.T_Nationality);
 
         }
+
+        //Function to delete a person
         private void deletePerson()
         {
             lba_testEntities1 db = new lba_testEntities1();
@@ -60,24 +63,8 @@ namespace LBA
             
         }
 
-        private void btnPersonProfilEmpty_Click(object sender, EventArgs e)
-        {
-            txtPersonProfilLastName.Clear();
-            txtPersonProfilFirstName.Clear();
-            txtPersonProfilOtherName.Clear();
-            txtPersonProfilRoad.Clear();
-            txtPersonProfilCity.Clear();
-            txtPersonProfilCountry.Clear();
-            cmbPersonProfilNationality.SelectedItem = null;
-            dtpPersonProfilBirthday.Value = DateTime.Now.AddYears(-18);
-            txtPersonProfilJob.Clear();
-            cmbPersonProfilDocType.SelectedItem = null;
-            dtpPersonProfilIdValidity.Value = DateTime.Now;
-            txtPersonProfilDocNumber.Clear();
-            rtbPersonProfilComment.Clear();
-        }
-
-        private void btnPersonProfilSave_Click(object sender, EventArgs e)
+        //Function to save the modifications
+        private void personProfilSave()
         {
             string patternNames = @"^[\p{L} \.'\-]+$";
             string patternCountry = @"^[a-zA-Z]+$";
@@ -103,7 +90,6 @@ namespace LBA
                 db.SaveChanges();
                 mainPage.searchClient();
 
-                System.Windows.Forms.MessageBox.Show("Client modifié avec succès");
                 this.Close();
             }
             else
@@ -112,6 +98,31 @@ namespace LBA
             }
         }
 
+        //Button to empty the fields
+        private void btnPersonProfilEmpty_Click(object sender, EventArgs e)
+        {
+            txtPersonProfilLastName.Clear();
+            txtPersonProfilFirstName.Clear();
+            txtPersonProfilOtherName.Clear();
+            txtPersonProfilRoad.Clear();
+            txtPersonProfilCity.Clear();
+            txtPersonProfilCountry.Clear();
+            cmbPersonProfilNationality.SelectedItem = null;
+            dtpPersonProfilBirthday.Value = DateTime.Now.AddYears(-18);
+            txtPersonProfilJob.Clear();
+            cmbPersonProfilDocType.SelectedItem = null;
+            dtpPersonProfilIdValidity.Value = DateTime.Now;
+            txtPersonProfilDocNumber.Clear();
+            rtbPersonProfilComment.Clear();
+        }
+
+        //Button to save the modifications
+        private void btnPersonProfilSave_Click(object sender, EventArgs e)
+        {
+            personProfilSave();
+        }
+
+        //Button to delete the person
         private void btnDeletePerson_Click(object sender, EventArgs e)
         {
             deletePerson();

@@ -16,6 +16,8 @@ namespace LBA
         {
             InitializeComponent();
         }
+
+        //Function to display all the operations
         public void viewOperation()
         {
             lba_testEntities1 db = new lba_testEntities1();
@@ -74,28 +76,32 @@ namespace LBA
             dataGridView1.Columns[9].Visible = false;
             dataGridView1.Columns[10].Visible = false;
         }
+
         private void OperationHistory_Load(object sender, EventArgs e)
         {
             viewOperation();
         }
 
+        //Refresh the research if the first date is changed
         private void dtpOperationHistory1_ValueChanged(object sender, EventArgs e)
         {
             viewOperation();
         }
 
+        //Refresh the research if the second date is changed
         private void dtpOperationHistory2_ValueChanged(object sender, EventArgs e)
         {
             viewOperation();
         }
 
+        //Button to open AddOperation
         private void btnOperationHistoryAdd_Click(object sender, EventArgs e)
         {
             AddOperation display6 = new AddOperation();
             display6.personToAddOperation = personIdToViewOperation;
             display6.operationHistory = this;
             display6.normalOperation = true;
-            display6.Show();
+            display6.ShowDialog();
         }
     }
 }

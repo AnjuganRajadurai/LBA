@@ -212,21 +212,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-effacer-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-effacer-60.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-effacer-30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-agrandir-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-agrandir-32.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +237,8 @@
       <DependentUpon>lba_test.edmx</DependentUpon>
       <LastGenOutput>lba_test.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\LBA_Logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -61,52 +61,12 @@ namespace LBA.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_agrandir_32 {
+        internal static System.Drawing.Icon LBA_Logo {
             get {
-                object obj = ResourceManager.GetObject("icons8-agrandir-32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_agrandir_50 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-agrandir-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_effacer_30 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-effacer-30", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_effacer_50 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-effacer-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_effacer_60 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-effacer-60", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("LBA_Logo", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
     }

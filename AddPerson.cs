@@ -43,31 +43,45 @@ namespace LBA
             string patternCountry = @"^[a-zA-Z]+$";
             string patternJob = @"^[a-zA-Z]+$";
 
-            if (Regex.IsMatch(txtAddPersonFirstName.Text,patternNames) && Regex.IsMatch(txtAddPersonLastName.Text, patternNames)  && Regex.IsMatch(txtAddPersonOtherName.Text, patternNames) && Regex.IsMatch(txtAddPersonCountry.Text, patternCountry,RegexOptions.IgnorePatternWhitespace) && Regex.IsMatch(txtAddPersonJob.Text, patternJob))
+            if (Regex.IsMatch(txtAddPersonFirstName.Text,patternNames) && Regex.IsMatch(txtAddPersonLastName.Text, patternNames) && Regex.IsMatch(txtAddPersonCountry.Text, patternCountry,RegexOptions.IgnorePatternWhitespace) && Regex.IsMatch(txtAddPersonJob.Text, patternJob))
             {
-                lba_testEntities1 db = new lba_testEntities1();
-
-                var lastPersonAdded = db.T_Person.Add(new T_Person()
+                if (dtpAddPersonBirthday.Value<=DateTime.Now.AddYears(-18))
                 {
-                    lastName = txtAddPersonLastName.Text,
-                    firstName = txtAddPersonFirstName.Text,
-                    otherName = txtAddPersonOtherName.Text,
-                    road = txtAddPersonRoad.Text,
-                    city = txtAddPersonCity.Text,
-                    country = txtAddPersonCountry.Text,
-                    nationalityFk = cmbAddPersonNationality.SelectedIndex + 1,
-                    birthday = dtpAddPersonBirthday.Value,
-                    job = txtAddPersonJob.Text,
-                    documentType = cmbAddPersonDocType.Text,
-                    idValidity = dtpAddPersonIdValidity.Value,
-                    docNumber = txtAddPersonDocNumber.Text,
-                    commentPerson = rtbAddPersonComment.Text
-                });
-                db.SaveChanges();
-                lastIdAdded = lastPersonAdded.personId;
-                mainPage.searchClient();
-                operationCanceled = false;
-                this.Close();
+                    if (dtpAddPersonIdValidity.Value>=DateTime.Now.AddDays(-1))
+                    {
+                        lba_testEntities1 db = new lba_testEntities1();
+
+                        var lastPersonAdded = db.T_Person.Add(new T_Person()
+                        {
+                            lastName = txtAddPersonLastName.Text,
+                            firstName = txtAddPersonFirstName.Text,
+                            otherName = txtAddPersonOtherName.Text,
+                            road = txtAddPersonRoad.Text,
+                            city = txtAddPersonCity.Text,
+                            country = txtAddPersonCountry.Text,
+                            nationalityFk = cmbAddPersonNationality.SelectedIndex + 1,
+                            birthday = dtpAddPersonBirthday.Value,
+                            job = txtAddPersonJob.Text,
+                            documentType = cmbAddPersonDocType.Text,
+                            idValidity = dtpAddPersonIdValidity.Value,
+                            docNumber = txtAddPersonDocNumber.Text,
+                            commentPerson = rtbAddPersonComment.Text
+                        });
+                        db.SaveChanges();
+                        lastIdAdded = lastPersonAdded.personId;
+                        mainPage.searchClient();
+                        operationCanceled = false;
+                        this.Close();
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("La date d'expiration est déjà dépassée !");
+                    }
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Le client n'a pas 18 ans !");
+                }
             }
             else
             {

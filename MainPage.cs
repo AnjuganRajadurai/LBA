@@ -260,13 +260,20 @@ namespace LBA
         //Button to open AddOperation
         private void btnAddOperation_Click(object sender, EventArgs e)
         {
-            AddOperation display6 = new AddOperation();
-            AddPerson display4 = new AddPerson();
-            display6.addPerson = display4;
-            display6.Show();
-
-            display4.mainPage = this;
-            display4.Show();
+            if (Application.OpenForms.OfType<AddPerson>().Count() == 1)
+            {
+                System.Windows.Forms.MessageBox.Show("Veuillez d'abord fermer la première fenêtre !");
+            }
+            else
+            {
+                AddOperation display6 = new AddOperation();
+                AddPerson display4 = new AddPerson();
+                display6.addPerson = display4;
+                display6.Show();
+                display4.Show();
+                display4.mainPage = this;
+            }
+ 
         }
 
         //Button to open AddPerson

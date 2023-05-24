@@ -30,6 +30,7 @@ namespace LBA
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOperation));
             this.addOperationPanel = new System.Windows.Forms.Panel();
             this.btnAddOperationEmpty = new System.Windows.Forms.Button();
             this.btnAddOperation = new System.Windows.Forms.Button();
@@ -209,6 +210,7 @@ namespace LBA
             this.ClientSize = new System.Drawing.Size(484, 261);
             this.Controls.Add(this.addOperationPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddOperation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBA - Ajout d\'une transaction";

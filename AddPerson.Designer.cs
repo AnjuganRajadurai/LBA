@@ -30,6 +30,7 @@ namespace LBA
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPerson));
             this.addPersonPanel = new System.Windows.Forms.Panel();
             this.btnAddPersonEmpty = new System.Windows.Forms.Button();
             this.btnAddPersonSave = new System.Windows.Forms.Button();
@@ -508,6 +509,7 @@ namespace LBA
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.addPersonPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBA - Ajouter un client";

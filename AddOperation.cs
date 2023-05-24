@@ -26,98 +26,122 @@ namespace LBA
         //Function to add an operation
         private void addOperation()
         {
-            string patternAmount = @"^\d+([.]\d{1,2})?$";
-            if (Regex.IsMatch(txtOperationAmount.Text, patternAmount))
+            if (!string.IsNullOrEmpty(cmbAddOperationType.Text))
             {
-                closeOperation = true;
-                if (normalOperation)
+                if (!string.IsNullOrEmpty(txtOperationAmount.Text))
                 {
-                    try
+                    string patternAmount = @"^\d+([.]\d{1,2})?$";
+                    if (Regex.IsMatch(txtOperationAmount.Text, patternAmount))
                     {
-                        lba_testEntities1 db = new lba_testEntities1();
-
-                        decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
-                        if (operationAmountLimit < decimal.Parse(txtOperationAmount.Text))
+                        closeOperation = true;
+                        if (normalOperation)
                         {
-                            System.Windows.Forms.MessageBox.Show("Le montant dépasse la limite fixée !");
+                            try
+                            {
+                                lba_testEntities1 db = new lba_testEntities1();
+
+                                decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
+                                if (operationAmountLimit < decimal.Parse(txtOperationAmount.Text))
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Le montant dépasse la limite fixée !");
+                                }
+                                bool countryIsRisked = db.T_Nationality.Join(db.T_Person, n => n.nationalityId, p => p.nationalityFk, (n, p) => new
+                                {
+                                    p.personId,
+                                    n.countryRisk
+
+                                }).Where(p => p.personId == personToAddOperation).Select(n => n.countryRisk).FirstOrDefault();
+
+                                if (countryIsRisked)
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Sa nationalité est un pays à risque !");
+                                }
+
+                                db.T_Operation.Add(new T_Operation()
+                                {
+                                    personFk = personToAddOperation,
+                                    operationTypeFk = cmbAddOperationType.SelectedIndex + 1,
+                                    operatorName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1],
+                                    cashdesk = System.Environment.MachineName,
+                                    operationDate = DateTime.Now,
+                                    operationAmount = decimal.Parse(txtOperationAmount.Text),
+                                    operationComment = cmbAddOperationComment.Text
+                                });
+                                db.SaveChanges();
+                            }
+                            catch (Exception ex)
+                            {
+                                System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de l'ajout de la nouvelle transaction !");
+                            }
                         }
-                        bool countryIsRisked = db.T_Nationality.Join(db.T_Person, n => n.nationalityId, p => p.nationalityFk, (n, p) => new
+                        else
                         {
-                            p.personId,
-                            n.countryRisk
+                            if (addPerson.lastIdAdded == 0)
+                            {
+                                System.Windows.Forms.MessageBox.Show("Aucun client n'a été selectionné pour cette transaction !");
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    personToAddOperation = addPerson.lastIdAdded;
+                                    lba_testEntities1 db = new lba_testEntities1();
 
-                        }).Where(p => p.personId == personToAddOperation).Select(n => n.countryRisk).FirstOrDefault();
+                                    decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
+                                    if (operationAmountLimit < decimal.Parse(txtOperationAmount.Text))
+                                    {
+                                        System.Windows.Forms.MessageBox.Show("Le montant dépasse la limite fixée !");
+                                    }
+                                    bool countryIsRisked = db.T_Nationality.Join(db.T_Person, n => n.nationalityId, p => p.nationalityFk, (n, p) => new
+                                    {
+                                        p.personId,
+                                        n.countryRisk
 
-                        if (countryIsRisked)
-                        {
-                            System.Windows.Forms.MessageBox.Show("Sa nationalité est un pays à risque !");
+                                    }).Where(p => p.personId == personToAddOperation).Select(n => n.countryRisk).FirstOrDefault();
+
+                                    if (countryIsRisked)
+                                    {
+                                        System.Windows.Forms.MessageBox.Show("Sa nationalité est un pays à risque !");
+                                    }
+
+                                    db.T_Operation.Add(new T_Operation()
+                                    {
+                                        personFk = personToAddOperation,
+                                        operationTypeFk = cmbAddOperationType.SelectedIndex + 1,
+                                        operatorName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1],
+                                        cashdesk = System.Environment.MachineName,
+                                        operationDate = DateTime.Now,
+                                        operationAmount = decimal.Parse(txtOperationAmount.Text),
+                                        operationComment = cmbAddOperationComment.Text
+                                    });
+                                    db.SaveChanges();
+                                    System.Windows.Forms.MessageBox.Show("Transaction ajoutée avec succès !");
+                                }
+                                catch (Exception ex)
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de l'ajout de la nouvelle transaction !");
+                                }
+                            }
+
                         }
-
-                        db.T_Operation.Add(new T_Operation()
-                        {
-                            personFk = personToAddOperation,
-                            operationTypeFk = cmbAddOperationType.SelectedIndex + 1,
-                            operatorName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1],
-                            cashdesk = System.Environment.MachineName,
-                            operationDate = DateTime.Now,
-                            operationAmount = decimal.Parse(txtOperationAmount.Text),
-                            operationComment = cmbAddOperationComment.Text
-                        });
-                        db.SaveChanges();
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de l'ajout de la nouvelle transaction !");
+                        closeOperation = false;
+                        System.Windows.Forms.MessageBox.Show("Merci de mettre un point avant vos décimales !");
                     }
                 }
                 else
                 {
-                    try
-                    {
-                        personToAddOperation = addPerson.lastIdAdded;
-                        lba_testEntities1 db = new lba_testEntities1();
-
-                        decimal operationAmountLimit = db.T_Limit.Select(l => l.limitAmount).FirstOrDefault();
-                        if (operationAmountLimit < decimal.Parse(txtOperationAmount.Text))
-                        {
-                            System.Windows.Forms.MessageBox.Show("Le montant dépasse la limite fixée !");
-                        }
-                        bool countryIsRisked = db.T_Nationality.Join(db.T_Person, n => n.nationalityId, p => p.nationalityFk, (n, p) => new
-                        {
-                            p.personId,
-                            n.countryRisk
-
-                        }).Where(p => p.personId == personToAddOperation).Select(n => n.countryRisk).FirstOrDefault();
-
-                        if (countryIsRisked)
-                        {
-                            System.Windows.Forms.MessageBox.Show("Sa nationalité est un pays à risque !");
-                        }
-
-                        db.T_Operation.Add(new T_Operation()
-                        {
-                            personFk = personToAddOperation,
-                            operationTypeFk = cmbAddOperationType.SelectedIndex + 1,
-                            operatorName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1],
-                            cashdesk = System.Environment.MachineName,
-                            operationDate = DateTime.Now,
-                            operationAmount = decimal.Parse(txtOperationAmount.Text),
-                            operationComment = cmbAddOperationComment.Text
-                        });
-                        db.SaveChanges();
-                        System.Windows.Forms.MessageBox.Show("Transaction ajoutée avec succès !");
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show("Il y a eu un problème lors de l'ajout de la nouvelle transaction !");
-                    }
+                    closeOperation = false;
+                    System.Windows.Forms.MessageBox.Show("Merci de bien vouloir rentrer un montant !");
                 }
             }
             else
             {
                 closeOperation = false;
-                System.Windows.Forms.MessageBox.Show("Merci de mettre un point avant vos décimales !");
-            }      
+                System.Windows.Forms.MessageBox.Show("Merci de choisir un type de transactions !");
+            }
         }
 
         //Button to empty the fields

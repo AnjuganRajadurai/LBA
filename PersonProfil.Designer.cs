@@ -30,6 +30,7 @@ namespace LBA
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonProfil));
             this.t_NationalityTableAdapter = new LBA.lba_testDataSetTableAdapters.T_NationalityTableAdapter();
             this.lbatestDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lba_testDataSet = new LBA.lba_testDataSet();
@@ -536,6 +537,7 @@ namespace LBA
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.personProfilPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PersonProfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBA - Profil client";

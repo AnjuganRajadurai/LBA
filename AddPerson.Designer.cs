@@ -361,7 +361,7 @@ namespace LBA
             this.lblAddPersonDocNumber.AutoSize = true;
             this.lblAddPersonDocNumber.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddPersonDocNumber.ForeColor = System.Drawing.Color.White;
-            this.lblAddPersonDocNumber.Location = new System.Drawing.Point(338, 129);
+            this.lblAddPersonDocNumber.Location = new System.Drawing.Point(329, 129);
             this.lblAddPersonDocNumber.Name = "lblAddPersonDocNumber";
             this.lblAddPersonDocNumber.Size = new System.Drawing.Size(124, 15);
             this.lblAddPersonDocNumber.TabIndex = 9;
@@ -375,7 +375,7 @@ namespace LBA
             this.lblAddPersonIdValidity.AutoSize = true;
             this.lblAddPersonIdValidity.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddPersonIdValidity.ForeColor = System.Drawing.Color.White;
-            this.lblAddPersonIdValidity.Location = new System.Drawing.Point(364, 103);
+            this.lblAddPersonIdValidity.Location = new System.Drawing.Point(355, 103);
             this.lblAddPersonIdValidity.Name = "lblAddPersonIdValidity";
             this.lblAddPersonIdValidity.Size = new System.Drawing.Size(98, 15);
             this.lblAddPersonIdValidity.TabIndex = 8;
@@ -389,7 +389,7 @@ namespace LBA
             this.lblAddPersonDocumentType.AutoSize = true;
             this.lblAddPersonDocumentType.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddPersonDocumentType.ForeColor = System.Drawing.Color.White;
-            this.lblAddPersonDocumentType.Location = new System.Drawing.Point(356, 77);
+            this.lblAddPersonDocumentType.Location = new System.Drawing.Point(347, 77);
             this.lblAddPersonDocumentType.Name = "lblAddPersonDocumentType";
             this.lblAddPersonDocumentType.Size = new System.Drawing.Size(106, 15);
             this.lblAddPersonDocumentType.TabIndex = 7;
@@ -403,7 +403,7 @@ namespace LBA
             this.lblAddPersonBirthday.AutoSize = true;
             this.lblAddPersonBirthday.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddPersonBirthday.ForeColor = System.Drawing.Color.White;
-            this.lblAddPersonBirthday.Location = new System.Drawing.Point(355, 25);
+            this.lblAddPersonBirthday.Location = new System.Drawing.Point(346, 25);
             this.lblAddPersonBirthday.Name = "lblAddPersonBirthday";
             this.lblAddPersonBirthday.Size = new System.Drawing.Size(107, 15);
             this.lblAddPersonBirthday.TabIndex = 6;
@@ -417,11 +417,11 @@ namespace LBA
             this.lblAddPersonCountry.AutoSize = true;
             this.lblAddPersonCountry.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddPersonCountry.ForeColor = System.Drawing.Color.White;
-            this.lblAddPersonCountry.Location = new System.Drawing.Point(39, 155);
+            this.lblAddPersonCountry.Location = new System.Drawing.Point(47, 155);
             this.lblAddPersonCountry.Name = "lblAddPersonCountry";
-            this.lblAddPersonCountry.Size = new System.Drawing.Size(106, 15);
+            this.lblAddPersonCountry.Size = new System.Drawing.Size(98, 15);
             this.lblAddPersonCountry.TabIndex = 5;
-            this.lblAddPersonCountry.Text = "Pays de résidence";
+            this.lblAddPersonCountry.Text = "Pays de domicile";
             // 
             // lblAddPersonNationality
             // 

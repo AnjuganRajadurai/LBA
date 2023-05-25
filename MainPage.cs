@@ -72,7 +72,7 @@ namespace LBA
                 dataGridView1.Columns[2].HeaderText = "Autre Noms";
                 dataGridView1.Columns[3].HeaderText = "Rue et N°";
                 dataGridView1.Columns[4].HeaderText = "Ville";
-                dataGridView1.Columns[5].HeaderText = "Pays";
+                dataGridView1.Columns[5].HeaderText = "Pays de domicile";
                 dataGridView1.Columns[6].HeaderText = "Date de naissance";
                 dataGridView1.Columns[7].HeaderText = "Nationalité";
                 dataGridView1.Columns[8].HeaderText = "Commentaire";

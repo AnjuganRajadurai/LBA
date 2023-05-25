@@ -397,11 +397,11 @@ namespace LBA
             this.lblPersonProfilCountry.AutoSize = true;
             this.lblPersonProfilCountry.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonProfilCountry.ForeColor = System.Drawing.Color.White;
-            this.lblPersonProfilCountry.Location = new System.Drawing.Point(39, 155);
+            this.lblPersonProfilCountry.Location = new System.Drawing.Point(47, 155);
             this.lblPersonProfilCountry.Name = "lblPersonProfilCountry";
-            this.lblPersonProfilCountry.Size = new System.Drawing.Size(106, 15);
+            this.lblPersonProfilCountry.Size = new System.Drawing.Size(98, 15);
             this.lblPersonProfilCountry.TabIndex = 5;
-            this.lblPersonProfilCountry.Text = "Pays de résidence";
+            this.lblPersonProfilCountry.Text = "Pays de domicile";
             // 
             // lblPersonProfilNationality
             // 

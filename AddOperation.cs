@@ -140,7 +140,7 @@ namespace LBA
             else
             {
                 closeOperation = false;
-                System.Windows.Forms.MessageBox.Show("Merci de choisir un type de transactions !");
+                System.Windows.Forms.MessageBox.Show("Merci de choisir un type de transaction !");
             }
         }
 

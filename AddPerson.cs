@@ -85,7 +85,7 @@ namespace LBA
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("Les champs ne respectent pas les règles !");
+                System.Windows.Forms.MessageBox.Show("Un champ 'Nom' ou 'Pénom' ne respecte pas les règles d'insertions !");
             }
             
         }

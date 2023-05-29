@@ -57,84 +57,34 @@ namespace LBA
             GroupPrincipal group3 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-W");
             GroupPrincipal group4 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-ADM");
 
-            if (user != null)
+            try
             {
-                if (user.IsMemberOf(group1))
+                if (isValid = ctx.ValidateCredentials(username, password))
                 {
-                    try
-                    {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
+                    username = string.Empty;
+                    password = string.Empty;
 
-                            mainPage.userGroup = "G-MONC1-APP-LBA-RW";
-                        }
-                    }
-                    catch (Exception ex)
+                    if (user.IsMemberOf(group1))
                     {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
+                        mainPage.userGroup = "G-MONC1-APP-LBA-RW";
                     }
-                }
-                else if (user.IsMemberOf(group2))
-                {
-                    try
+                    else if (user.IsMemberOf(group2))
                     {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
-
-                            mainPage.userGroup = "G-MONC1-APP-LBA-R";
-                        }
+                        mainPage.userGroup = "G-MONC1-APP-LBA-R";
                     }
-                    catch (Exception ex)
+                    else if (user.IsMemberOf(group3))
                     {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
+                        mainPage.userGroup = "G-MONC1-APP-LBA-W";
                     }
-                }
-                else if (user.IsMemberOf(group3))
-                {
-                    try
+                    else if (user.IsMemberOf(group4))
                     {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
-
-                            mainPage.userGroup = "G-MONC1-APP-LBA-W";
-                        }
+                        mainPage.userGroup = "G-MONC1-APP-LBA-ADM";
                     }
-                    catch (Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
-                    }
-                }
-                else if (user.IsMemberOf(group4))
-                {
-                    try
-                    {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
-
-                            mainPage.userGroup = "G-MONC1-APP-LBA-ADM";
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
-                    }
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("Vous ne possédez pas les autorisations pour vous connecter !");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Ces informations de connexion ne correspondent pas à un utilisateur de l'AD");
+                System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
             }
             return isValid;
         }

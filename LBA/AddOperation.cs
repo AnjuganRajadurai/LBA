@@ -128,7 +128,7 @@ namespace LBA
                     else
                     {
                         closeOperation = false;
-                        System.Windows.Forms.MessageBox.Show("Merci de mettre un point avant vos décimales !");
+                        System.Windows.Forms.MessageBox.Show("Merci de respecter le format 00.00");
                     }
                 }
                 else

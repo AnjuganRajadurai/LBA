@@ -33,3 +33,10 @@ C:\Users\arajadurai\source\repos\LBA\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\arajadurai\source\repos\LBA\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.csproj.CopyComplete
 C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.AddOperation.resources
+C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.AddPerson.resources
+C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.PersonProfil.resources
+C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.OperationHistory.resources
+C:\Users\arajadurai\source\repos\LBA\bin\Debug\LBA.exe.manifest
+C:\Users\arajadurai\source\repos\LBA\bin\Debug\LBA.application
+C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.exe.manifest
+C:\Users\arajadurai\source\repos\LBA\obj\Debug\LBA.application

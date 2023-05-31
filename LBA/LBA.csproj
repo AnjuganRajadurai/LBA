@@ -12,9 +12,10 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\v-chmonc1-ocm01\OCMEXE\Application\LBA\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
+    <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -22,10 +23,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -46,6 +47,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B9AB2277AF0CE7B5ECAC986AA19B6E1FB0FFDBD0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>LBA_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>LBA_Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -77,6 +93,12 @@
     <Compile Include="AddOperation.Designer.cs">
       <DependentUpon>AddOperation.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPerson.Designer.cs">
+      <DependentUpon>AddPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="lba_test.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,6 +115,11 @@
       <DependentUpon>lba_test.edmx</DependentUpon>
     </Compile>
     <Compile Include="lba_test.Views.cs" />
+    <Compile Include="lba_testDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>lba_testDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +131,18 @@
     </Compile>
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperationHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationHistory.Designer.cs">
+      <DependentUpon>OperationHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonProfil.Designer.cs">
+      <DependentUpon>PersonProfil.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +158,9 @@
     <Compile Include="T_Operation.cs">
       <DependentUpon>lba_test.tt</DependentUpon>
     </Compile>
+    <Compile Include="T_OperationDetail.cs">
+      <DependentUpon>lba_test.tt</DependentUpon>
+    </Compile>
     <Compile Include="T_OperationType.cs">
       <DependentUpon>lba_test.tt</DependentUpon>
     </Compile>
@@ -128,11 +170,20 @@
     <EmbeddedResource Include="AddOperation.resx">
       <DependentUpon>AddOperation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPerson.resx">
+      <DependentUpon>AddPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationHistory.resx">
+      <DependentUpon>OperationHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonProfil.resx">
+      <DependentUpon>PersonProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,8 +199,20 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>lba_test.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="LBA_TemporaryKey.pfx" />
     <None Include="lba_test.edmx.diagram">
       <DependentUpon>lba_test.edmx</DependentUpon>
+    </None>
+    <None Include="lba_testDataSet.xsc">
+      <DependentUpon>lba_testDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="lba_testDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>lba_testDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="lba_testDataSet.xss">
+      <DependentUpon>lba_testDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -164,21 +227,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-effacer-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-effacer-60.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-effacer-30.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-agrandir-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-agrandir-32.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -196,6 +244,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LBA_Logo.ico" />
     <Content Include="lba_test.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>lba_test.edmx</DependentUpon>
@@ -206,6 +255,8 @@
       <DependentUpon>lba_test.edmx</DependentUpon>
       <LastGenOutput>lba_test.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\LBA_Logo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,14 +14,20 @@ namespace LBA
 {
     public partial class Login : Form
     {
+        public MainPage mainPage;
+        public string userGroup;
         private PrincipalContext ctx;
         public Login()
         {
             InitializeComponent();
+            mainPage = new MainPage();
+            //To get the actual connect user
             txtLoginUsername.Text = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1];
+            //Connection to the Domain Controller
             ctx = new PrincipalContext(ContextType.Domain, "172.26.66.130");
         }
 
+        //To be enabled to drag the Login Form
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -29,120 +35,68 @@ namespace LBA
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        public string userGroup = "";
-
         private void windowBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        private void Login_Load(object sender, EventArgs e)
+        {
+            txtLoginPassword.Focus();
+        }
 
+        //Function to validate if user if from Active Directory
         public bool ValidateLogin(string username, string password)
         {
             bool isValid = false;
 
+            //Find the user's group
             UserPrincipal user = UserPrincipal.FindByIdentity(ctx, username);
             GroupPrincipal group1 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-RW");
             GroupPrincipal group2 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-R");
             GroupPrincipal group3 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-W");
             GroupPrincipal group4 = GroupPrincipal.FindByIdentity(ctx, "G-MONC1-APP-LBA-ADM");
 
-            if (user != null)
+            try
             {
-                if (user.IsMemberOf(group1))
+                if (isValid = ctx.ValidateCredentials(username, password))
                 {
-                    try
-                    {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
+                    username = string.Empty;
+                    password = string.Empty;
 
-                            userGroup = "G-MONC1-APP-LBA-RW";
-                        }
-                    }
-                    catch (Exception ex)
+                    if (user.IsMemberOf(group1))
                     {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
+                        mainPage.userGroup = "G-MONC1-APP-LBA-RW";
                     }
-                }
-                else if (user.IsMemberOf(group2))
-                {
-                    try
+                    else if (user.IsMemberOf(group2))
                     {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
-
-                            userGroup = "G-MONC1-APP-LBA-R";
-                        }
+                        mainPage.userGroup = "G-MONC1-APP-LBA-R";
                     }
-                    catch (Exception ex)
+                    else if (user.IsMemberOf(group3))
                     {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
+                        mainPage.userGroup = "G-MONC1-APP-LBA-W";
                     }
-                }
-                else if (user.IsMemberOf(group3))
-                {
-                    try
+                    else if (user.IsMemberOf(group4))
                     {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
-
-                            userGroup = "G-MONC1-APP-LBA-W";
-                        }
+                        mainPage.userGroup = "G-MONC1-APP-LBA-ADM";
                     }
-                    catch (Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
-                    }
-                }
-                else if (user.IsMemberOf(group4))
-                {
-                    try
-                    {
-                        if (isValid = ctx.ValidateCredentials(username, password))
-                        {
-                            username = string.Empty;
-                            password = string.Empty;
-
-                            userGroup = "G-MONC1-APP-LBA-ADM";
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
-                    }
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("Vous ne possédez pas les autorisations pour vous connecter !");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Ces informations de connexion ne correspondent pas à un utilisateur de l'AD");
+                System.Windows.Forms.MessageBox.Show("Problème de connexion avec le contrôleur de domaine");
             }
             return isValid;
         }
 
-        private void btnCloseApp_Click(object sender, EventArgs e)
+        private void displayMainPage()
         {
-            Application.Exit();
+            mainPage.Show();
+            this.Hide();
         }
 
-        private void btnEmpty_Click(object sender, EventArgs e)
-        {
-            txtLoginUsername.Clear();
-            txtLoginPassword.Clear();
-
-            txtLoginUsername.Focus();
-        }
-
-        private void btnConnect_Click(object sender, EventArgs e)
+        //Function to connect to the main Page
+        private void connect()
         {
             if (string.IsNullOrEmpty(txtLoginUsername.Text))
             {
@@ -154,33 +108,21 @@ namespace LBA
             }
             else if (ValidateLogin(txtLoginUsername.Text, txtLoginPassword.Text))
             {
-                if (userGroup == "G-MONC1-APP-LBA-RW")
+                if (mainPage.userGroup == "G-MONC1-APP-LBA-R")
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Close();
+                    displayMainPage();
                 }
-                else if (userGroup == "G-MONC1-APP-LBA-RW")
+                else if (mainPage.userGroup == "G-MONC1-APP-LBA-RW")
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Close();
+                    displayMainPage();
                 }
-                else if (userGroup == "G-MONC1-APP-LBA-W")
+                else if (mainPage.userGroup == "G-MONC1-APP-LBA-W")
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Close();
+                    displayMainPage();
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                    MainPage display2 = new MainPage();
-                    display2.Show();
-                    this.Hide();
+                    displayMainPage();
                 }
             }
             else
@@ -189,53 +131,33 @@ namespace LBA
             }
         }
 
+        //Button to close the app
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        //Button to empty the fields
+        private void btnEmpty_Click(object sender, EventArgs e)
+        {
+            txtLoginUsername.Clear();
+            txtLoginPassword.Clear();
+
+            txtLoginUsername.Focus();
+        }
+
+        //Button to try connecting
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            connect();
+        }
+
+        //Keydown to try connecting
         private void txtLoginPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (string.IsNullOrEmpty(txtLoginUsername.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Le nom d'utilisateur est vide !");
-                }
-                else if (string.IsNullOrEmpty(txtLoginPassword.Text))
-                {
-                    System.Windows.Forms.MessageBox.Show("Le champ mot de passe est vide !");
-                }
-                else if (ValidateLogin(txtLoginUsername.Text, txtLoginPassword.Text))
-                {
-                    if (userGroup == "G-MONC1-APP-LBA-RW")
-                    {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                    else if (userGroup == "G-MONC1-APP-LBA-RW")
-                    {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                    else if (userGroup == "G-MONC1-APP-LBA-W")
-                    {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        System.Windows.Forms.MessageBox.Show("Connexion réusssie");
-                        MainPage display2 = new MainPage();
-                        display2.Show();
-                        this.Hide();
-                    }
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("Le mot de passe est incorrect ou le nom d'utilisateur si vous l'avez modifié");
-                }
+                connect();
             }
         }
     }

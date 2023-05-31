@@ -22,8 +22,10 @@ namespace LBA
     
         public int operationTypeId { get; set; }
         public string operationTypeName { get; set; }
+        public int operationDetailFk { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_Operation> T_Operation { get; set; }
+        public virtual T_OperationDetail T_OperationDetail { get; set; }
     }
 }

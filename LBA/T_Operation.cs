@@ -17,10 +17,8 @@ namespace LBA
         public int operationId { get; set; }
         public int personFk { get; set; }
         public int operationTypeFk { get; set; }
-        public string @operator { get; set; }
+        public string operatorName { get; set; }
         public string cashdesk { get; set; }
-        public Nullable<bool> cession { get; set; }
-        public Nullable<bool> retrocession { get; set; }
         public System.DateTime operationDate { get; set; }
         public decimal operationAmount { get; set; }
         public string operationComment { get; set; }

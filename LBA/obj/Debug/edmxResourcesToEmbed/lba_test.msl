@@ -30,30 +30,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="T_Operation">
-      <EntityTypeMapping TypeName="lba_testModel.T_Operation">
-        <MappingFragment StoreEntitySet="T_Operation">
-          <ScalarProperty Name="operationId" ColumnName="operationId" />
-          <ScalarProperty Name="personFk" ColumnName="personFk" />
-          <ScalarProperty Name="operationTypeFk" ColumnName="operationTypeFk" />
-          <ScalarProperty Name="operator" ColumnName="operator" />
-          <ScalarProperty Name="cashdesk" ColumnName="cashdesk" />
-          <ScalarProperty Name="cession" ColumnName="cession" />
-          <ScalarProperty Name="retrocession" ColumnName="retrocession" />
-          <ScalarProperty Name="operationDate" ColumnName="operationDate" />
-          <ScalarProperty Name="operationAmount" ColumnName="operationAmount" />
-          <ScalarProperty Name="operationComment" ColumnName="operationComment" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="T_OperationType">
-      <EntityTypeMapping TypeName="lba_testModel.T_OperationType">
-        <MappingFragment StoreEntitySet="T_OperationType">
-          <ScalarProperty Name="operationTypeId" ColumnName="operationTypeId" />
-          <ScalarProperty Name="operationTypeName" ColumnName="operationTypeName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="T_Person">
       <EntityTypeMapping TypeName="lba_testModel.T_Person">
         <MappingFragment StoreEntitySet="T_Person">
@@ -71,6 +47,37 @@
           <ScalarProperty Name="documentType" ColumnName="documentType" />
           <ScalarProperty Name="idValidity" ColumnName="idValidity" />
           <ScalarProperty Name="docNumber" ColumnName="docNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_Operation">
+      <EntityTypeMapping TypeName="lba_testModel.T_Operation">
+        <MappingFragment StoreEntitySet="T_Operation">
+          <ScalarProperty Name="operationComment" ColumnName="operationComment" />
+          <ScalarProperty Name="operationAmount" ColumnName="operationAmount" />
+          <ScalarProperty Name="operationDate" ColumnName="operationDate" />
+          <ScalarProperty Name="cashdesk" ColumnName="cashdesk" />
+          <ScalarProperty Name="operatorName" ColumnName="operatorName" />
+          <ScalarProperty Name="operationTypeFk" ColumnName="operationTypeFk" />
+          <ScalarProperty Name="personFk" ColumnName="personFk" />
+          <ScalarProperty Name="operationId" ColumnName="operationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OperationDetail">
+      <EntityTypeMapping TypeName="lba_testModel.T_OperationDetail">
+        <MappingFragment StoreEntitySet="T_OperationDetail">
+          <ScalarProperty Name="operationDetailName" ColumnName="operationDetailName" />
+          <ScalarProperty Name="operationDetailId" ColumnName="operationDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_OperationType">
+      <EntityTypeMapping TypeName="lba_testModel.T_OperationType">
+        <MappingFragment StoreEntitySet="T_OperationType">
+          <ScalarProperty Name="operationDetailFk" ColumnName="operationDetailFk" />
+          <ScalarProperty Name="operationTypeName" ColumnName="operationTypeName" />
+          <ScalarProperty Name="operationTypeId" ColumnName="operationTypeId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
